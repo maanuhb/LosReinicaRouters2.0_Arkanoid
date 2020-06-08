@@ -80,8 +80,19 @@
         <None Include="App.config" />
     </ItemGroup>
     <ItemGroup>
+      <Content Include="Resources\Arkanoid_lettersblue.png" />
       <Content Include="Resources\barra2loop.gif" />
       <Content Include="Resources\GameBackground.jpg" />
+      <Content Include="Resources\MenuBackGround.png" />
+      <Content Include="Resources\pelota.png" />
+      <Content Include="Resources\_0.png" />
+      <Content Include="Resources\_1.png" />
+      <Content Include="Resources\_2.png" />
+      <Content Include="Resources\_3.png" />
+      <Content Include="Resources\_4.png" />
+      <Content Include="Resources\_5.png" />
+      <Content Include="Resources\_6.png" />
+      <Content Include="Resources\_61.png" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
