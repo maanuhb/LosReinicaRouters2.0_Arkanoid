@@ -1,0 +1,9 @@
+C:\Users\13-V001LA\RiderProjects\Arkanoid\bin\Debug\Arkanoid.exe.config
+C:\Users\13-V001LA\RiderProjects\Arkanoid\bin\Debug\Arkanoid.exe
+C:\Users\13-V001LA\RiderProjects\Arkanoid\bin\Debug\Arkanoid.pdb
+C:\Users\13-V001LA\RiderProjects\Arkanoid\obj\Debug\Arkanoid.csprojAssemblyReference.cache
+C:\Users\13-V001LA\RiderProjects\Arkanoid\obj\Debug\Arkanoid.Properties.Resources.resources
+C:\Users\13-V001LA\RiderProjects\Arkanoid\obj\Debug\Arkanoid.csproj.GenerateResource.cache
+C:\Users\13-V001LA\RiderProjects\Arkanoid\obj\Debug\Arkanoid.exe
+C:\Users\13-V001LA\RiderProjects\Arkanoid\obj\Debug\Arkanoid.pdb
+C:\Users\13-V001LA\RiderProjects\Arkanoid\obj\Debug\Arkanoid.frmGame.resources
