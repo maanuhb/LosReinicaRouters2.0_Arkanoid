@@ -11,14 +11,18 @@
     <setting file="file://$PROJECT_DIR$/frmGame.Designer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/frmGame.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Program.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/frmMainMenu.Designer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/frmMainMenu.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Program.cs" />
         <option value="$PROJECT_DIR$/Form1.Designer.cs" />
         <option value="$PROJECT_DIR$/Form1.cs" />
         <option value="$PROJECT_DIR$/frmGame.cs" />
+        <option value="$PROJECT_DIR$/frmMainMenu.Designer.cs" />
+        <option value="$PROJECT_DIR$/Program.cs" />
+        <option value="$PROJECT_DIR$/frmMainMenu.cs" />
       </list>
     </option>
   </component>
@@ -64,30 +68,36 @@
       <option name="presentableId" value="Default" />
       <updated>1591613198291</updated>
       <workItem from="1591613200095" duration="1268000" />
+      <workItem from="1591665118938" duration="2193000" />
+      <workItem from="1591769336953" duration="3002000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="UnityProjectConfiguration" hasMinimizedUI="null" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
   <component name="WindowStateProjectService">
-    <state width="1237" height="2" key="GridCell.Tab.0.bottom" timestamp="1591615678023">
+    <state x="506" y="287" key="Assembly removing confirmation dialog" timestamp="1591770212050">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="2" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1591615678023" />
-    <state width="1237" height="2" key="GridCell.Tab.0.center" timestamp="1591615678023">
+    <state x="506" y="287" key="Assembly removing confirmation dialog/0.0.1280.680@0.0.1280.680" timestamp="1591770212050" />
+    <state width="1237" height="2" key="GridCell.Tab.0.bottom" timestamp="1591772011581">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="2" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1591615678023" />
-    <state width="1237" height="2" key="GridCell.Tab.0.left" timestamp="1591615678022">
+    <state width="1237" height="2" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1591772011581" />
+    <state width="1237" height="2" key="GridCell.Tab.0.center" timestamp="1591772011581">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="2" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1591615678022" />
-    <state width="1237" height="2" key="GridCell.Tab.0.right" timestamp="1591615678023">
+    <state width="1237" height="2" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1591772011581" />
+    <state width="1237" height="2" key="GridCell.Tab.0.left" timestamp="1591772011581">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="2" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1591615678023" />
+    <state width="1237" height="2" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1591772011581" />
+    <state width="1237" height="2" key="GridCell.Tab.0.right" timestamp="1591772011581">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="2" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1591772011581" />
   </component>
 </project>

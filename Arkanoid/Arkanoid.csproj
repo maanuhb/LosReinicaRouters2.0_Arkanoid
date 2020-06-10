@@ -52,10 +52,19 @@
         <Compile Include="frmGame.Designer.cs">
             <DependentUpon>frmGame.cs</DependentUpon>
         </Compile>
+        <Compile Include="frmMainMenu.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="frmMainMenu.Designer.cs">
+          <DependentUpon>frmMainMenu.cs</DependentUpon>
+        </Compile>
         <Compile Include="Program.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
         <EmbeddedResource Include="frmGame.resx">
           <DependentUpon>frmGame.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="frmMainMenu.resx">
+          <DependentUpon>frmMainMenu.cs</DependentUpon>
         </EmbeddedResource>
         <EmbeddedResource Include="Properties\Resources.resx">
             <Generator>ResXFileCodeGenerator</Generator>
@@ -83,6 +92,7 @@
       <Content Include="Resources\Arkanoid_lettersblue.png" />
       <Content Include="Resources\barra2loop.gif" />
       <Content Include="Resources\GameBackground.jpg" />
+      <Content Include="Resources\MainMenuBackground.jpg" />
       <Content Include="Resources\MenuBackGround.png" />
       <Content Include="Resources\pelota.png" />
       <Content Include="Resources\_0.png" />

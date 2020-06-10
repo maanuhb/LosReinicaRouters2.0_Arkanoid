@@ -11,6 +11,9 @@
       <e p="frmGame.cs" t="Include" />
       <e p="frmGame.Designer.cs" t="Include" />
       <e p="frmGame.resx" t="Include" />
+      <e p="frmMainMenu.cs" t="Include" />
+      <e p="frmMainMenu.Designer.cs" t="Include" />
+      <e p="frmMainMenu.resx" t="Include" />
       <e p="obj" t="ExcludeRecursive" />
       <e p="packages" t="ExcludeRecursive" />
       <e p="Program.cs" t="Include" />
@@ -33,6 +36,7 @@
         <e p="Arkanoid_lettersblue.png" t="Include" />
         <e p="barra2loop.gif" t="Include" />
         <e p="GameBackground.jpg" t="Include" />
+        <e p="MainMenuBackground.jpg" t="Include" />
         <e p="MenuBackGround.png" t="Include" />
         <e p="pelota.png" t="Include" />
       </e>
