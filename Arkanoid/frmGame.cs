@@ -88,5 +88,18 @@ namespace Arkanoid
                 }
             }
         }
+        private void LoadBall()
+        {
+            ball = new PictureBox();
+            ball.Width = ball.Height = 20;
+            ball.BackgroundImage = Image.FromFile("../../Resources/pelota.png");
+            ball.BackgroundImageLayout = ImageLayout.Stretch;
+            ball.BackColor = Color.Transparent;
+
+            ball.Top = picSpaceShip.Top - ball.Height;
+            ball.Left = picSpaceShip.Left;
+            
+            Controls.Add(ball);
+        }
     }
 }
