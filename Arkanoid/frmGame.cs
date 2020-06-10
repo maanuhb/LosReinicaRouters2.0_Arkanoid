@@ -48,6 +48,7 @@ namespace Arkanoid
             picSpaceShip.Top = (Height - picSpaceShip.Height) - 130;
             
             LoadTiles();
+            LoadBall();
         }
 
         //Llenamos la matriz con los bloques 
@@ -97,7 +98,7 @@ namespace Arkanoid
             ball.BackColor = Color.Transparent;
 
             ball.Top = picSpaceShip.Top - ball.Height;
-            ball.Left = picSpaceShip.Left;
+            ball.Left = picSpaceShip.Left + (picSpaceShip.Width / 2) - (ball.Width / 2);
             
             Controls.Add(ball);
         }

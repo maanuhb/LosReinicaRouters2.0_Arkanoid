@@ -12,6 +12,7 @@
       <e p="frmGame.cs" t="Include" />
       <e p="frmGame.Designer.cs" t="Include" />
       <e p="frmGame.resx" t="Include" />
+      <e p="GameData.cs" t="Include" />
       <e p="obj" t="ExcludeRecursive" />
       <e p="packages" t="ExcludeRecursive" />
       <e p="Program.cs" t="Include" />
