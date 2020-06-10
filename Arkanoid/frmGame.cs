@@ -12,6 +12,8 @@ namespace Arkanoid
 {
     public partial class frmGame : Form
     {
+        private CustomPictureBox[,] cpb;
+        private PictureBox ball;
         public frmGame()
         {
             InitializeComponent();
@@ -24,6 +26,7 @@ namespace Arkanoid
             picSpaceShip.Location = new Point(x,y);
         }
 
+        //Movimiento de la plataforma con teclado
         private void frmGame_KeyDown(object sender, KeyEventArgs e)
         {
             switch (e.KeyCode)
@@ -37,13 +40,53 @@ namespace Arkanoid
                     
                         picSpaceShip.Left -= 10; 
                     break;
-                        
             }
         }
-
+        
         private void frmGame_Load(object sender, EventArgs e)
         {
             picSpaceShip.Top = (Height - picSpaceShip.Height) - 130;
+            
+            LoadTiles();
+        }
+
+        //Llenamos la matriz con los bloques 
+        private void LoadTiles()
+        {
+            int xAxis = 7;
+            int yAxis = 3;
+
+            int pbHeight = (int)(Height * 0.3) / yAxis;
+            int pbWidth = Width / xAxis;
+
+            cpb = new CustomPictureBox[yAxis, xAxis];
+            
+            for (int i = 0; i < yAxis; i++)
+            {
+                for (int j = 0; j < xAxis; j++)
+                {
+                    cpb[i, j] = new CustomPictureBox();
+
+                    if (i == 0)
+                        cpb[i, j].hits = 2;
+                    else
+                        cpb[i, j].hits = 1;
+
+                    cpb[i, j].Height = pbHeight;
+                    cpb[i, j].Width = pbWidth;
+
+                    cpb[i, j].Left = j * pbWidth;
+                    cpb[i, j].Top = i * pbHeight;
+                    
+                    cpb[i, j].BackgroundImage = Image.FromFile("../../Resources/_" + (i + 0) + ".png");
+                    cpb[i, j].BackgroundImageLayout = ImageLayout.Stretch;
+                    cpb[i,j].BackColor = Color.Transparent;
+
+                    cpb[i, j].Tag = "tileTag";
+                    
+                    Controls.Add(cpb[i,j]);
+                }
+            }
         }
     }
 }

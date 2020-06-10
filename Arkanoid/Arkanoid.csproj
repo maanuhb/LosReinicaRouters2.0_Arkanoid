@@ -46,6 +46,7 @@
         <Reference Include="System.Xml" />
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="CustomPictureBox.cs" />
         <Compile Include="frmGame.cs">
             <SubType>Form</SubType>
         </Compile>

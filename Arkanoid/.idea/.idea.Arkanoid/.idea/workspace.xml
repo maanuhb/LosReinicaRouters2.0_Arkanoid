@@ -6,8 +6,13 @@
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Arkanoid/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Arkanoid/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Arkanoid.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Arkanoid.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Properties/Resources.resx" beforeDir="false" afterPath="$PROJECT_DIR$/Properties/Resources.resx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resources/_61.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frmGame.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/frmGame.Designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/_7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/Arkanoid.exe" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/Arkanoid.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/Arkanoid.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/Arkanoid.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frmGame.cs" beforeDir="false" afterPath="$PROJECT_DIR$/frmGame.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/Arkanoid.csproj.GenerateResource.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/Arkanoid.csproj.GenerateResource.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/Arkanoid.exe" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/Arkanoid.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/Arkanoid.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/Arkanoid.pdb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,9 +23,11 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/frmGame.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/frmGame.Designer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Properties/Resources.resx" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/frmGame.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/CustomPictureBox.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Program.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -28,6 +35,8 @@
         <option value="$PROJECT_DIR$/Program.cs" />
         <option value="$PROJECT_DIR$/Form1.Designer.cs" />
         <option value="$PROJECT_DIR$/Form1.cs" />
+        <option value="$PROJECT_DIR$/Properties/Resources.resx" />
+        <option value="$PROJECT_DIR$/CustomPictureBox.cs" />
         <option value="$PROJECT_DIR$/frmGame.cs" />
       </list>
     </option>
@@ -44,6 +53,12 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="TWShift.3" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
   <component name="RunManager">
     <configuration name="Arkanoid" type="DotNetProject" factoryName=".NET Project">
@@ -77,6 +92,7 @@
       <updated>1591613198291</updated>
       <workItem from="1591613200095" duration="1268000" />
       <workItem from="1591755892030" duration="249000" />
+      <workItem from="1591759579110" duration="4798000" />
     </task>
     <servers />
   </component>
@@ -86,25 +102,33 @@
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
   <component name="WindowStateProjectService">
-    <state width="1237" height="263" key="GridCell.Tab.0.bottom" timestamp="1591756220781">
+    <state width="1237" height="263" key="GridCell.Tab.0.bottom" timestamp="1591767062641">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
     <state width="1237" height="2" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1591615678023" />
-    <state width="1237" height="263" key="GridCell.Tab.0.bottom/0.0.1280.984@0.0.1280.984" timestamp="1591756220781" />
-    <state width="1237" height="263" key="GridCell.Tab.0.center" timestamp="1591756220781">
+    <state width="1237" height="263" key="GridCell.Tab.0.bottom/0.0.1280.984@0.0.1280.984" timestamp="1591767062641" />
+    <state width="1237" height="263" key="GridCell.Tab.0.center" timestamp="1591767062641">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
     <state width="1237" height="2" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1591615678023" />
-    <state width="1237" height="263" key="GridCell.Tab.0.center/0.0.1280.984@0.0.1280.984" timestamp="1591756220781" />
-    <state width="1237" height="263" key="GridCell.Tab.0.left" timestamp="1591756220781">
+    <state width="1237" height="263" key="GridCell.Tab.0.center/0.0.1280.984@0.0.1280.984" timestamp="1591767062641" />
+    <state width="1237" height="263" key="GridCell.Tab.0.left" timestamp="1591767062640">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
     <state width="1237" height="2" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1591615678022" />
-    <state width="1237" height="263" key="GridCell.Tab.0.left/0.0.1280.984@0.0.1280.984" timestamp="1591756220781" />
-    <state width="1237" height="263" key="GridCell.Tab.0.right" timestamp="1591756220781">
+    <state width="1237" height="263" key="GridCell.Tab.0.left/0.0.1280.984@0.0.1280.984" timestamp="1591767062640" />
+    <state width="1237" height="263" key="GridCell.Tab.0.right" timestamp="1591767062641">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
     <state width="1237" height="2" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1591615678023" />
-    <state width="1237" height="263" key="GridCell.Tab.0.right/0.0.1280.984@0.0.1280.984" timestamp="1591756220781" />
+    <state width="1237" height="263" key="GridCell.Tab.0.right/0.0.1280.984@0.0.1280.984" timestamp="1591767062641" />
+    <state x="350" y="182" key="RiderGenerateDialog" timestamp="1591759751154">
+      <screen x="0" y="0" width="1280" height="984" />
+    </state>
+    <state x="350" y="182" key="RiderGenerateDialog/0.0.1280.984@0.0.1280.984" timestamp="1591759751154" />
+    <state width="498" height="446" key="SwitcherDM" timestamp="1591760254347">
+      <screen x="0" y="0" width="1280" height="984" />
+    </state>
+    <state width="498" height="446" key="SwitcherDM/0.0.1280.984@0.0.1280.984" timestamp="1591760254347" />
   </component>
 </project>
