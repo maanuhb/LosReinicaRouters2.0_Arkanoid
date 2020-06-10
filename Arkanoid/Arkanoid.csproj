@@ -93,6 +93,7 @@
       <Content Include="Resources\_5.png" />
       <Content Include="Resources\_6.png" />
       <Content Include="Resources\_61.png" />
+      <Content Include="Resources\_71.png" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

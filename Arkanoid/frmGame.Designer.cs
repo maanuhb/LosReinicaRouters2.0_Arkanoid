@@ -51,7 +51,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackgroundImage = global::Arkanoid.Properties.Resources.GameBackground;
-            this.ClientSize = new System.Drawing.Size(1348, 634);
+            this.ClientSize = new System.Drawing.Size(1284, 634);
             this.Controls.Add(this.picSpaceShip);
             this.Icon = ((System.Drawing.Icon) (resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
