@@ -46,18 +46,23 @@
         <Reference Include="System.Xml" />
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="CustomPictureBox.cs" />
         <Compile Include="frmGame.cs">
             <SubType>Form</SubType>
         </Compile>
         <Compile Include="frmGame.Designer.cs">
             <DependentUpon>frmGame.cs</DependentUpon>
         </Compile>
+
         <Compile Include="frmMainMenu.cs">
           <SubType>Form</SubType>
         </Compile>
         <Compile Include="frmMainMenu.Designer.cs">
           <DependentUpon>frmMainMenu.cs</DependentUpon>
         </Compile>
+
+        <Compile Include="GameData.cs" />
+
         <Compile Include="Program.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
         <EmbeddedResource Include="frmGame.resx">
@@ -103,6 +108,7 @@
       <Content Include="Resources\_5.png" />
       <Content Include="Resources\_6.png" />
       <Content Include="Resources\_61.png" />
+      <Content Include="Resources\_71.png" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

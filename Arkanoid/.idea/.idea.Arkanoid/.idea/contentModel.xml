@@ -2,18 +2,20 @@
 <project version="4">
   <component name="ContentModelStore">
     <e p="C:\Users\13-V001LA\.Rider2019.3\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\13-V001LA\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_Arkanoid.-1340557228.00" t="ExcludeRecursive" />
-    <e p="C:\Users\13-V001LA\RiderProjects\Arkanoid" t="IncludeRecursive">
+    <e p="C:\Users\13-V001LA\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_Arkanoid.1583415504.00" t="ExcludeRecursive" />
+    <e p="C:\Users\13-V001LA\Desktop\proyecto\LosReinicaRouters2.0_Arkanoid\Arkanoid" t="IncludeRecursive">
       <e p="App.config" t="Include" />
       <e p="Arkanoid.csproj" t="IncludeRecursive" />
       <e p="Arkanoid.sln" t="IncludeFlat" />
       <e p="bin" t="ExcludeRecursive" />
+      <e p="CustomPictureBox.cs" t="Include" />
       <e p="frmGame.cs" t="Include" />
       <e p="frmGame.Designer.cs" t="Include" />
       <e p="frmGame.resx" t="Include" />
       <e p="frmMainMenu.cs" t="Include" />
       <e p="frmMainMenu.Designer.cs" t="Include" />
       <e p="frmMainMenu.resx" t="Include" />
+      <e p="GameData.cs" t="Include" />
       <e p="obj" t="ExcludeRecursive" />
       <e p="packages" t="ExcludeRecursive" />
       <e p="Program.cs" t="Include" />
@@ -33,6 +35,7 @@
         <e p="_5.png" t="Include" />
         <e p="_6.png" t="Include" />
         <e p="_61.png" t="Include" />
+        <e p="_71.png" t="Include" />
         <e p="Arkanoid_lettersblue.png" t="Include" />
         <e p="barra2loop.gif" t="Include" />
         <e p="GameBackground.jpg" t="Include" />
