@@ -29,20 +29,39 @@ namespace Arkanoid
         //Movimiento de la plataforma con teclado
         private void frmGame_KeyDown(object sender, KeyEventArgs e)
         {
-            switch (e.KeyCode)
+            if (!GameData.gamestarted)
             {
-                case Keys.Right:
-                    if ( picSpaceShip.Location.X <=Width*0.75- picSpaceShip.Width  )
-                        picSpaceShip.Left += 10; 
-                    break;
-                case Keys.Left:
-                    if ( picSpaceShip.Location.X >= Width*0.40- picSpaceShip.Width)
-                    
-                        picSpaceShip.Left -= 10; 
-                    break;
+                switch (e.KeyCode)
+                {
+                    case Keys.Right:
+                        if (picSpaceShip.Location.X <= Width * 0.75 - picSpaceShip.Width)
+                            picSpaceShip.Left += 10;
+                        ball.Left = picSpaceShip.Left + (picSpaceShip.Width / 2) - (ball.Width / 2);
+                        break;
+                    case Keys.Left:
+                        if (picSpaceShip.Location.X >= Width * 0.40 - picSpaceShip.Width)
+                            picSpaceShip.Left -= 10;
+                        ball.Left = picSpaceShip.Left + (picSpaceShip.Width / 2) - (ball.Width / 2);
+                        break;
+                }
+            }
+            else
+            {
+                switch (e.KeyCode)
+                {
+                    case Keys.Right:
+                        if (picSpaceShip.Location.X <= Width * 0.75 - picSpaceShip.Width)
+                            picSpaceShip.Left += 10;
+                        break;
+                    case Keys.Left:
+                        if (picSpaceShip.Location.X >= Width * 0.40 - picSpaceShip.Width)
+
+                            picSpaceShip.Left -= 10;
+                        break;
+                }
             }
         }
-        
+
         private void frmGame_Load(object sender, EventArgs e)
         {
             picSpaceShip.Top = (Height - picSpaceShip.Height) - 130;
