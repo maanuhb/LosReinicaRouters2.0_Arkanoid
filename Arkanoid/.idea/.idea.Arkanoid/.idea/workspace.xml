@@ -2,22 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3fb578ff-b901-4f9a-a4c1-4f66c6f14b59" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Resources/_01.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Resources/_02.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Arkanoid/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Arkanoid/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Arkanoid/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Arkanoid/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Arkanoid.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Arkanoid.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Properties/Resources.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Properties/Resources.Designer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Properties/Resources.resx" beforeDir="false" afterPath="$PROJECT_DIR$/Properties/Resources.resx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/Arkanoid.exe" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/Arkanoid.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/Arkanoid.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/Arkanoid.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frmGame.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/frmGame.Designer.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frmGame.cs" beforeDir="false" afterPath="$PROJECT_DIR$/frmGame.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frmGame.resx" beforeDir="false" afterPath="$PROJECT_DIR$/frmGame.resx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frmMainMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/frmMainMenu.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/Arkanoid.Properties.Resources.resources" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/Arkanoid.Properties.Resources.resources" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/Arkanoid.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/Arkanoid.csproj.FileListAbsolute.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/Arkanoid.csproj.GenerateResource.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/Arkanoid.csproj.GenerateResource.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/Arkanoid.exe" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/Arkanoid.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/Arkanoid.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/Arkanoid.pdb" afterDir="false" />
@@ -111,6 +99,7 @@
       <workItem from="1591759579110" duration="6508000" />
       <workItem from="1591824846460" duration="7386000" />
       <workItem from="1591851585287" duration="506000" />
+      <workItem from="1591852649526" duration="841000" />
     </task>
     <servers />
   </component>
@@ -124,30 +113,30 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="506" y="287" key="Assembly removing confirmation dialog/0.0.1280.680@0.0.1280.680" timestamp="1591780225963" />
-    <state width="1557" height="222" key="GridCell.Tab.0.bottom" timestamp="1591852091875">
+    <state width="1557" height="222" key="GridCell.Tab.0.bottom" timestamp="1591853491692">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state width="1237" height="2" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1591831691014" />
     <state width="1237" height="263" key="GridCell.Tab.0.bottom/0.0.1280.984@0.0.1280.984" timestamp="1591768812810" />
-    <state width="1557" height="222" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1591852091875" />
-    <state width="1557" height="222" key="GridCell.Tab.0.center" timestamp="1591852091874">
+    <state width="1557" height="222" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1591853491692" />
+    <state width="1557" height="222" key="GridCell.Tab.0.center" timestamp="1591853491692">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state width="1237" height="2" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1591831691014" />
     <state width="1237" height="263" key="GridCell.Tab.0.center/0.0.1280.984@0.0.1280.984" timestamp="1591768812810" />
-    <state width="1557" height="222" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1591852091874" />
-    <state width="1557" height="222" key="GridCell.Tab.0.left" timestamp="1591852091874">
+    <state width="1557" height="222" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1591853491692" />
+    <state width="1557" height="222" key="GridCell.Tab.0.left" timestamp="1591853491691">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state width="1237" height="2" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1591831690998" />
     <state width="1237" height="263" key="GridCell.Tab.0.left/0.0.1280.984@0.0.1280.984" timestamp="1591768812810" />
-    <state width="1557" height="222" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1591852091874" />
-    <state width="1557" height="222" key="GridCell.Tab.0.right" timestamp="1591852091875">
+    <state width="1557" height="222" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1591853491691" />
+    <state width="1557" height="222" key="GridCell.Tab.0.right" timestamp="1591853491692">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state width="1237" height="2" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1591831691014" />
     <state width="1237" height="263" key="GridCell.Tab.0.right/0.0.1280.984@0.0.1280.984" timestamp="1591768812810" />
-    <state width="1557" height="222" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1591852091875" />
+    <state width="1557" height="222" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1591853491692" />
     <state width="1237" height="2" key="GridCell.Tab.1.bottom" timestamp="1591825757450">
       <screen x="0" y="0" width="1280" height="680" />
     </state>

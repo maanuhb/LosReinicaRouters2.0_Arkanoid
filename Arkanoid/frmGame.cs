@@ -186,11 +186,15 @@ namespace Arkanoid
                         ArrayExist[i, j] = false;
                     }*/
                    
-                    if (ball.Bounds.IntersectsWith(cpb[i, j].Bounds))
+                    if (cpb[i,j]!= null && ball.Bounds.IntersectsWith(cpb[i, j].Bounds))
                     {
                         cpb[i, j].hits--;
-                        if (cpb[i,j].hits == 0)
+                        if (cpb[i, j].hits == 0)
+                        {
                             Controls.Remove(cpb[i,j]);
+                            cpb[i, j] = null;
+                        }
+
                         GameData.dirY = -GameData.dirY;
                         return;
                     }
