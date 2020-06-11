@@ -2,10 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3fb578ff-b901-4f9a-a4c1-4f66c6f14b59" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Arkanoid/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Arkanoid/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Arkanoid/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Arkanoid/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Arkanoid.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Arkanoid.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Properties/Resources.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Properties/Resources.Designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Properties/Resources.resx" beforeDir="false" afterPath="$PROJECT_DIR$/Properties/Resources.resx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/Arkanoid.exe" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/Arkanoid.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/Arkanoid.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/Arkanoid.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frmGame.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/frmGame.Designer.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frmGame.cs" beforeDir="false" afterPath="$PROJECT_DIR$/frmGame.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frmGame.resx" beforeDir="false" afterPath="$PROJECT_DIR$/frmGame.resx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frmMainMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/frmMainMenu.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/Arkanoid.Properties.Resources.resources" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/Arkanoid.Properties.Resources.resources" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/Arkanoid.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/Arkanoid.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/Arkanoid.csproj.GenerateResource.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/Arkanoid.csproj.GenerateResource.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/Arkanoid.exe" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/Arkanoid.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/Arkanoid.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/Arkanoid.pdb" afterDir="false" />
     </list>
@@ -18,14 +29,14 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/frmGame.Designer.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Properties/Resources.resx" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/frmGame.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/CustomPictureBox.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/GameData.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Program.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/frmMainMenu.Designer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/frmMainMenu.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/frmGame.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Program.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/CustomPictureBox.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/frmMainMenu.Designer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/frmGame.Designer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GameData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Properties/Resources.resx" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -34,11 +45,11 @@
         <option value="$PROJECT_DIR$/Form1.cs" />
         <option value="$PROJECT_DIR$/Properties/Resources.resx" />
         <option value="$PROJECT_DIR$/CustomPictureBox.cs" />
-        <option value="$PROJECT_DIR$/GameData.cs" />
-        <option value="$PROJECT_DIR$/frmGame.cs" />
         <option value="$PROJECT_DIR$/frmMainMenu.Designer.cs" />
         <option value="$PROJECT_DIR$/Program.cs" />
+        <option value="$PROJECT_DIR$/GameData.cs" />
         <option value="$PROJECT_DIR$/frmMainMenu.cs" />
+        <option value="$PROJECT_DIR$/frmGame.cs" />
       </list>
     </option>
   </component>
@@ -92,13 +103,11 @@
       <option name="presentableId" value="Default" />
       <updated>1591613198291</updated>
       <workItem from="1591613200095" duration="1268000" />
-<<<<<<< HEAD
       <workItem from="1591665118938" duration="2193000" />
       <workItem from="1591769336953" duration="3002000" />
-=======
       <workItem from="1591755892030" duration="249000" />
       <workItem from="1591759579110" duration="6508000" />
->>>>>>> 3be732db85478f09db2cdd6aa8925dfebfb00941
+      <workItem from="1591824846460" duration="7386000" />
     </task>
     <servers />
   </component>
@@ -108,48 +117,94 @@
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
   <component name="WindowStateProjectService">
-<<<<<<< HEAD
-    <state x="506" y="287" key="Assembly removing confirmation dialog" timestamp="1591770212050">
+    <state x="506" y="287" key="Assembly removing confirmation dialog" timestamp="1591780225963">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="506" y="287" key="Assembly removing confirmation dialog/0.0.1280.680@0.0.1280.680" timestamp="1591770212050" />
-    <state width="1237" height="2" key="GridCell.Tab.0.bottom" timestamp="1591772011581">
+    <state x="506" y="287" key="Assembly removing confirmation dialog/0.0.1280.680@0.0.1280.680" timestamp="1591780225963" />
+    <state width="1237" height="2" key="GridCell.Tab.0.bottom" timestamp="1591831691014">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="2" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1591772011581" />
-    <state width="1237" height="2" key="GridCell.Tab.0.center" timestamp="1591772011581">
-      <screen x="0" y="0" width="1280" height="680" />
-    </state>
-    <state width="1237" height="2" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1591772011581" />
-    <state width="1237" height="2" key="GridCell.Tab.0.left" timestamp="1591772011581">
-      <screen x="0" y="0" width="1280" height="680" />
-    </state>
-    <state width="1237" height="2" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1591772011581" />
-    <state width="1237" height="2" key="GridCell.Tab.0.right" timestamp="1591772011581">
-      <screen x="0" y="0" width="1280" height="680" />
-    </state>
-    <state width="1237" height="2" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1591772011581" />
-=======
-    <state width="1237" height="263" key="GridCell.Tab.0.bottom" timestamp="1591768812810">
-      <screen x="0" y="0" width="1280" height="984" />
-    </state>
-    <state width="1237" height="2" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1591615678023" />
+    <state width="1237" height="2" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1591831691014" />
     <state width="1237" height="263" key="GridCell.Tab.0.bottom/0.0.1280.984@0.0.1280.984" timestamp="1591768812810" />
-    <state width="1237" height="263" key="GridCell.Tab.0.center" timestamp="1591768812810">
-      <screen x="0" y="0" width="1280" height="984" />
+    <state width="1237" height="2" key="GridCell.Tab.0.center" timestamp="1591831691014">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="2" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1591615678023" />
+    <state width="1237" height="2" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1591831691014" />
     <state width="1237" height="263" key="GridCell.Tab.0.center/0.0.1280.984@0.0.1280.984" timestamp="1591768812810" />
-    <state width="1237" height="263" key="GridCell.Tab.0.left" timestamp="1591768812810">
-      <screen x="0" y="0" width="1280" height="984" />
+    <state width="1237" height="2" key="GridCell.Tab.0.left" timestamp="1591831690998">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="2" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1591615678022" />
+    <state width="1237" height="2" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1591831690998" />
     <state width="1237" height="263" key="GridCell.Tab.0.left/0.0.1280.984@0.0.1280.984" timestamp="1591768812810" />
-    <state width="1237" height="263" key="GridCell.Tab.0.right" timestamp="1591768812810">
-      <screen x="0" y="0" width="1280" height="984" />
+    <state width="1237" height="2" key="GridCell.Tab.0.right" timestamp="1591831691014">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="2" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1591615678023" />
+    <state width="1237" height="2" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1591831691014" />
     <state width="1237" height="263" key="GridCell.Tab.0.right/0.0.1280.984@0.0.1280.984" timestamp="1591768812810" />
+    <state width="1237" height="2" key="GridCell.Tab.1.bottom" timestamp="1591825757450">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="2" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1591825757450" />
+    <state width="1237" height="2" key="GridCell.Tab.1.center" timestamp="1591825757445">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="2" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1591825757445" />
+    <state width="1237" height="2" key="GridCell.Tab.1.left" timestamp="1591825757445">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="2" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1591825757445" />
+    <state width="1237" height="2" key="GridCell.Tab.1.right" timestamp="1591825757450">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="2" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1591825757450" />
+    <state width="1237" height="2" key="GridCell.Tab.2.bottom" timestamp="1591825757450">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="2" key="GridCell.Tab.2.bottom/0.0.1280.680@0.0.1280.680" timestamp="1591825757450" />
+    <state width="1237" height="2" key="GridCell.Tab.2.center" timestamp="1591825757450">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="2" key="GridCell.Tab.2.center/0.0.1280.680@0.0.1280.680" timestamp="1591825757450" />
+    <state width="1237" height="2" key="GridCell.Tab.2.left" timestamp="1591825757450">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="2" key="GridCell.Tab.2.left/0.0.1280.680@0.0.1280.680" timestamp="1591825757450" />
+    <state width="1237" height="2" key="GridCell.Tab.2.right" timestamp="1591825757450">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="2" key="GridCell.Tab.2.right/0.0.1280.680@0.0.1280.680" timestamp="1591825757450" />
+    <state width="1237" height="2" key="GridCell.Tab.3.bottom" timestamp="1591825757451">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="2" key="GridCell.Tab.3.bottom/0.0.1280.680@0.0.1280.680" timestamp="1591825757451" />
+    <state width="1237" height="2" key="GridCell.Tab.3.center" timestamp="1591825757450">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="2" key="GridCell.Tab.3.center/0.0.1280.680@0.0.1280.680" timestamp="1591825757450" />
+    <state width="1237" height="2" key="GridCell.Tab.3.left" timestamp="1591825757450">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="2" key="GridCell.Tab.3.left/0.0.1280.680@0.0.1280.680" timestamp="1591825757450" />
+    <state width="1237" height="2" key="GridCell.Tab.3.right" timestamp="1591825757451">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="2" key="GridCell.Tab.3.right/0.0.1280.680@0.0.1280.680" timestamp="1591825757451" />
+    <state width="1237" height="2" key="GridCell.Tab.4.bottom" timestamp="1591825757451">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="2" key="GridCell.Tab.4.bottom/0.0.1280.680@0.0.1280.680" timestamp="1591825757451" />
+    <state width="1237" height="2" key="GridCell.Tab.4.center" timestamp="1591825757451">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="2" key="GridCell.Tab.4.center/0.0.1280.680@0.0.1280.680" timestamp="1591825757451" />
+    <state width="1237" height="2" key="GridCell.Tab.4.left" timestamp="1591825757451">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="2" key="GridCell.Tab.4.left/0.0.1280.680@0.0.1280.680" timestamp="1591825757451" />
+    <state width="1237" height="2" key="GridCell.Tab.4.right" timestamp="1591825757451">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="2" key="GridCell.Tab.4.right/0.0.1280.680@0.0.1280.680" timestamp="1591825757451" />
     <state x="350" y="182" key="RiderGenerateDialog" timestamp="1591759751154">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
@@ -158,6 +213,5 @@
       <screen x="0" y="0" width="1280" height="984" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1280.984@0.0.1280.984" timestamp="1591760254347" />
->>>>>>> 3be732db85478f09db2cdd6aa8925dfebfb00941
   </component>
 </project>

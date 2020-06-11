@@ -28,6 +28,8 @@
       </e>
       <e p="Resources" t="Include">
         <e p="_0.png" t="Include" />
+        <e p="_01.png" t="Include" />
+        <e p="_02.png" t="Include" />
         <e p="_1.png" t="Include" />
         <e p="_2.png" t="Include" />
         <e p="_3.png" t="Include" />

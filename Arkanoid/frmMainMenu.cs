@@ -48,7 +48,7 @@ namespace Arkanoid
             if ( MessageBox.Show("estas seguro que deseas salir?", "Salida", MessageBoxButtons.YesNo, 
                 MessageBoxIcon.Question)==DialogResult.Yes)
             {
-                Close();
+                Application.Exit();
             }
            
         }

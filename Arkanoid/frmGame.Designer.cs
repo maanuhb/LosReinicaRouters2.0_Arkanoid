@@ -29,9 +29,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources =
                 new System.ComponentModel.ComponentResourceManager(typeof(frmGame));
             this.picSpaceShip = new System.Windows.Forms.PictureBox();
+            this.tmrSpeed = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize) (this.picSpaceShip)).BeginInit();
             this.SuspendLayout();
             // 
@@ -39,12 +41,17 @@
             // 
             this.picSpaceShip.BackColor = System.Drawing.Color.Transparent;
             this.picSpaceShip.BackgroundImage = global::Arkanoid.Properties.Resources.barra2loop;
+            this.picSpaceShip.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.picSpaceShip.Location = new System.Drawing.Point(704, 417);
             this.picSpaceShip.Name = "picSpaceShip";
             this.picSpaceShip.Size = new System.Drawing.Size(117, 67);
             this.picSpaceShip.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picSpaceShip.TabIndex = 0;
             this.picSpaceShip.TabStop = false;
+            // 
+            // tmrSpeed
+            // 
+            this.tmrSpeed.Tick += new System.EventHandler(this.tmrSpeed_Tick);
             // 
             // frmGame
             // 
@@ -66,5 +73,6 @@
         #endregion
 
         private System.Windows.Forms.PictureBox picSpaceShip;
+        private System.Windows.Forms.Timer tmrSpeed;
     }
 }
