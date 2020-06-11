@@ -7,9 +7,7 @@ C:\Users\13-V001LA\RiderProjects\Arkanoid\obj\Debug\Arkanoid.csproj.GenerateReso
 C:\Users\13-V001LA\RiderProjects\Arkanoid\obj\Debug\Arkanoid.exe
 C:\Users\13-V001LA\RiderProjects\Arkanoid\obj\Debug\Arkanoid.pdb
 C:\Users\13-V001LA\RiderProjects\Arkanoid\obj\Debug\Arkanoid.frmGame.resources
-<<<<<<< HEAD
 C:\Users\13-V001LA\RiderProjects\Arkanoid\obj\Debug\Arkanoid.frmMainMenu.resources
-=======
 C:\Users\PC\Desktop\LosReinicaRouters2.0_Arkanoid\Arkanoid\obj\Debug\Arkanoid.csprojAssemblyReference.cache
 C:\Users\PC\Desktop\LosReinicaRouters2.0_Arkanoid\Arkanoid\obj\Debug\Arkanoid.frmGame.resources
 C:\Users\PC\Desktop\LosReinicaRouters2.0_Arkanoid\Arkanoid\obj\Debug\Arkanoid.csproj.GenerateResource.cache
@@ -19,7 +17,6 @@ C:\Users\PC\Desktop\LosReinicaRouters2.0_Arkanoid\Arkanoid\bin\Debug\Arkanoid.ex
 C:\Users\PC\Desktop\LosReinicaRouters2.0_Arkanoid\Arkanoid\bin\Debug\Arkanoid.exe
 C:\Users\PC\Desktop\LosReinicaRouters2.0_Arkanoid\Arkanoid\bin\Debug\Arkanoid.pdb
 C:\Users\PC\Desktop\LosReinicaRouters2.0_Arkanoid\Arkanoid\obj\Debug\Arkanoid.Properties.Resources.resources
->>>>>>> 3be732db85478f09db2cdd6aa8925dfebfb00941
 C:\Users\13-V001LA\Desktop\proyecto\LosReinicaRouters2.0_Arkanoid\Arkanoid\obj\Debug\Arkanoid.csprojAssemblyReference.cache
 C:\Users\13-V001LA\Desktop\proyecto\LosReinicaRouters2.0_Arkanoid\Arkanoid\obj\Debug\Arkanoid.frmGame.resources
 C:\Users\13-V001LA\Desktop\proyecto\LosReinicaRouters2.0_Arkanoid\Arkanoid\obj\Debug\Arkanoid.frmMainMenu.resources
