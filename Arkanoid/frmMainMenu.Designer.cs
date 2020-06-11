@@ -31,8 +31,7 @@ namespace Arkanoid
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources =
-                new System.ComponentModel.ComponentResourceManager(typeof(frmMainMenu));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMainMenu));
             this.picArkanoidLetters = new System.Windows.Forms.PictureBox();
             this.btnPlay = new System.Windows.Forms.Button();
             this.btnTopScore = new System.Windows.Forms.Button();
@@ -55,8 +54,7 @@ namespace Arkanoid
             // btnPlay
             // 
             this.btnPlay.BackColor = System.Drawing.Color.MediumBlue;
-            this.btnPlay.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular,
-                System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.btnPlay.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.btnPlay.ForeColor = System.Drawing.Color.White;
             this.btnPlay.Location = new System.Drawing.Point(481, 246);
             this.btnPlay.Name = "btnPlay";
@@ -71,8 +69,7 @@ namespace Arkanoid
             // btnTopScore
             // 
             this.btnTopScore.BackColor = System.Drawing.Color.MediumBlue;
-            this.btnTopScore.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular,
-                System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.btnTopScore.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.btnTopScore.ForeColor = System.Drawing.Color.White;
             this.btnTopScore.Location = new System.Drawing.Point(481, 368);
             this.btnTopScore.Name = "btnTopScore";
@@ -87,8 +84,7 @@ namespace Arkanoid
             // btnExit
             // 
             this.btnExit.BackColor = System.Drawing.Color.MediumBlue;
-            this.btnExit.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular,
-                System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.btnExit.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.btnExit.ForeColor = System.Drawing.Color.White;
             this.btnExit.Location = new System.Drawing.Point(481, 489);
             this.btnExit.Name = "btnExit";
@@ -118,11 +114,11 @@ namespace Arkanoid
             this.ResumeLayout(false);
         }
 
-        #endregion
-
-        private System.Windows.Forms.PictureBox picArkanoidLetters;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnPlay;
         private System.Windows.Forms.Button btnTopScore;
+        private System.Windows.Forms.PictureBox picArkanoidLetters;
+
+        #endregion
     }
 }
