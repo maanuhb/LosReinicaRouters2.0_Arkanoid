@@ -8,16 +8,17 @@ namespace Arkanoid
     {
         public frmMainMenu()
         {
+            
             InitializeComponent();
+            instructionsUC1.Visible = false;
         }
 
         private void btnPlay_Click(object sender, EventArgs e)
         {
-            
             frmGame PlayGame = new frmGame();
             PlayGame.Show();
-            
         }
+       
         private void btnPlay_MouseHover(object sender, EventArgs e)
         {
             btnPlay.BackColor = btnPlay.BackColor == Color.MediumBlue ?
@@ -45,7 +46,7 @@ namespace Arkanoid
         private void btnExit_Click(object sender, EventArgs e)
         {
             
-            if ( MessageBox.Show("estas seguro que deseas salir?", "Salida", MessageBoxButtons.YesNo, 
+            if ( MessageBox.Show("estas seguro que deseas salir ?", "Salida", MessageBoxButtons.YesNo, 
                 MessageBoxIcon.Question)==DialogResult.Yes)
             {
                 Application.Exit();
@@ -64,8 +65,15 @@ namespace Arkanoid
             btnExit.BackColor = Color.MediumBlue;
         }
 
-        
+        private void btnInstructions_MouseHover(object sender, EventArgs e)
+        {
+            instructionsUC1.Visible = true;
+        }
 
-       
+
+        private void btnInstructions_MouseLeave(object sender, EventArgs e)
+        {
+            instructionsUC1.Visible = false;
+        }
     }
 }

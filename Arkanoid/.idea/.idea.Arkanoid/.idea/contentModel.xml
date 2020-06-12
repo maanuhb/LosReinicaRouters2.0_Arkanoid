@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ContentModelStore">
     <e p="C:\Users\usuario\AppData\local\JetBrains\Rider2020.1\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\usuario\AppData\local\JetBrains\Rider2020.1\resharper-host\local\Transient\ReSharperHost\v201\SolutionCaches\_Arkanoid.-883854072.00" t="ExcludeRecursive" />
-    <e p="C:\Users\usuario\Documents\LosReinicaRouters2.0_Arkanoid\Arkanoid" t="IncludeRecursive">
+    <e p="C:\Users\usuario\AppData\local\JetBrains\Rider2020.1\resharper-host\local\Transient\ReSharperHost\v201\SolutionCaches\_Arkanoid.466934310.00" t="ExcludeRecursive" />
+    <e p="C:\Users\usuario\Documents\LosReinicaRouters2\Arkanoid" t="IncludeRecursive">
       <e p="App.config" t="Include" />
       <e p="Arkanoid.csproj" t="IncludeRecursive" />
       <e p="Arkanoid.sln" t="IncludeFlat" />
@@ -17,6 +17,9 @@
       <e p="frmMainMenu.Designer.cs" t="Include" />
       <e p="frmMainMenu.resx" t="Include" />
       <e p="GameData.cs" t="Include" />
+      <e p="InstructionsUC.cs" t="Include" />
+      <e p="InstructionsUC.Designer.cs" t="Include" />
+      <e p="InstructionsUC.resx" t="Include" />
       <e p="obj" t="ExcludeRecursive" />
       <e p="packages" t="ExcludeRecursive" />
       <e p="packages.config" t="Include" />

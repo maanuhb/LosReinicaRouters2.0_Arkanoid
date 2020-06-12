@@ -30,8 +30,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources =
-                new System.ComponentModel.ComponentResourceManager(typeof(frmGame));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGame));
             this.picSpaceShip = new System.Windows.Forms.PictureBox();
             this.tmrSpeed = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize) (this.picSpaceShip)).BeginInit();
@@ -40,7 +39,6 @@
             // picSpaceShip
             // 
             this.picSpaceShip.BackColor = System.Drawing.Color.Transparent;
-            this.picSpaceShip.BackgroundImage = global::Arkanoid.Properties.Resources.barra2loop;
             this.picSpaceShip.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.picSpaceShip.Location = new System.Drawing.Point(704, 417);
             this.picSpaceShip.Name = "picSpaceShip";
@@ -57,7 +55,6 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.BackgroundImage = global::Arkanoid.Properties.Resources.GameBackground;
             this.ClientSize = new System.Drawing.Size(1284, 634);
             this.Controls.Add(this.picSpaceShip);
             this.Icon = ((System.Drawing.Icon) (resources.GetObject("$this.Icon")));
@@ -70,9 +67,9 @@
             this.ResumeLayout(false);
         }
 
-        #endregion
-
         private System.Windows.Forms.PictureBox picSpaceShip;
         private System.Windows.Forms.Timer tmrSpeed;
+
+        #endregion
     }
 }

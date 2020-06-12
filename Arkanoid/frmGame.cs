@@ -38,7 +38,6 @@ namespace Arkanoid
                 GameData.gamestarted = true;
             }
             if (!GameData.gamestarted)
-                
             {
                 switch (e.KeyCode)
                 {
