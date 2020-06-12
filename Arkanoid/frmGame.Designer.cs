@@ -33,6 +33,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGame));
             this.picSpaceShip = new System.Windows.Forms.PictureBox();
             this.tmrSpeed = new System.Windows.Forms.Timer(this.components);
+            this.label1 = new System.Windows.Forms.Label();
+            this.heart1 = new System.Windows.Forms.Label();
+            this.heart2 = new System.Windows.Forms.Label();
+            this.heart3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize) (this.picSpaceShip)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,11 +55,59 @@
             // 
             this.tmrSpeed.Tick += new System.EventHandler(this.tmrSpeed_Tick);
             // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label1.Location = new System.Drawing.Point(11, 24);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(88, 25);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "VIDAS: ";
+            // 
+            // heart1
+            // 
+            this.heart1.BackColor = System.Drawing.Color.Transparent;
+            this.heart1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.heart1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.heart1.Image = ((System.Drawing.Image) (resources.GetObject("heart1.Image")));
+            this.heart1.Location = new System.Drawing.Point(105, 9);
+            this.heart1.Name = "heart1";
+            this.heart1.Size = new System.Drawing.Size(45, 46);
+            this.heart1.TabIndex = 2;
+            // 
+            // heart2
+            // 
+            this.heart2.BackColor = System.Drawing.Color.Transparent;
+            this.heart2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.heart2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.heart2.Image = ((System.Drawing.Image) (resources.GetObject("heart2.Image")));
+            this.heart2.Location = new System.Drawing.Point(156, 9);
+            this.heart2.Name = "heart2";
+            this.heart2.Size = new System.Drawing.Size(45, 46);
+            this.heart2.TabIndex = 3;
+            // 
+            // heart3
+            // 
+            this.heart3.BackColor = System.Drawing.Color.Transparent;
+            this.heart3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.heart3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.heart3.Image = ((System.Drawing.Image) (resources.GetObject("heart3.Image")));
+            this.heart3.Location = new System.Drawing.Point(207, 9);
+            this.heart3.Name = "heart3";
+            this.heart3.Size = new System.Drawing.Size(45, 46);
+            this.heart3.TabIndex = 4;
+            // 
             // frmGame
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1284, 634);
+            this.Controls.Add(this.heart3);
+            this.Controls.Add(this.heart2);
+            this.Controls.Add(this.heart1);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.picSpaceShip);
             this.Icon = ((System.Drawing.Icon) (resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -67,6 +119,10 @@
             this.ResumeLayout(false);
         }
 
+        private System.Windows.Forms.Label heart1;
+        private System.Windows.Forms.Label heart2;
+        private System.Windows.Forms.Label heart3;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox picSpaceShip;
         private System.Windows.Forms.Timer tmrSpeed;
 

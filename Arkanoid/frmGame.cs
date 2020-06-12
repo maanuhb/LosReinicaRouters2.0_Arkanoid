@@ -16,7 +16,7 @@ namespace Arkanoid
         private CustomPictureBox[,] cpb;
         private PictureBox ball;
         private bool[,] ArrayExist;
-        
+        private int live = 3;
 
         public frmGame()
         {
@@ -119,7 +119,7 @@ namespace Arkanoid
             }
         }
         private void LoadBall()
-        {
+        { 
             ball = new PictureBox();
             ball.Width = ball.Height = 20;
             ball.BackgroundImage = Image.FromFile("../../Resources/pelota.png");
@@ -141,10 +141,22 @@ namespace Arkanoid
             bounceball();
         }
 
+        private void liveaction()
+        {
+            --live;
+            heart3.Visible = false;
+            MessageBox.Show("Ha perdido una vida.");
+        }
+
         private void bounceball()
         {
             if (ball.Bottom > (int)(Height*0.9) + ball.Height)
             {
+                if (live != 0)
+                {
+                    liveaction();                   
+                }else 
+                    Application.Exit();
                 /*
                 GameData.dirX = 0;
                 GameData.dirY = 0;
@@ -156,7 +168,6 @@ namespace Arkanoid
                     frmMainMenu Prueba = new frmMainMenu();
                     Prueba.Show();
                 }*/
-                Application.Exit();
             }
 
             if (ball.Left < Width * 0.30 || ball.Right > Width * 0.75)
