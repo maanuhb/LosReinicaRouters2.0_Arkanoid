@@ -16,7 +16,7 @@ namespace Arkanoid
         private CustomPictureBox[,] cpb;
         private PictureBox ball;
         private bool[,] ArrayExist;
-        private int live = 3;
+        private int live = 4;
 
         public frmGame()
         {
@@ -72,6 +72,8 @@ namespace Arkanoid
 
         private void frmGame_Load(object sender, EventArgs e)
         {
+            picSpaceShip.BackgroundImage=Image.FromFile("../../Resources/barra2loop.gif");
+            picSpaceShip.BackgroundImageLayout = ImageLayout.Stretch;
             picSpaceShip.Top = (Height - picSpaceShip.Height) - 130;
             LoadBall();
             LoadTiles();
@@ -143,14 +145,44 @@ namespace Arkanoid
 
         private void liveaction()
         {
+            tmrSpeed.Stop();
             --live;
-            heart3.Visible = false;
+            if (live==3)
+            {
+                heart3.Visible = false;
+            }
+            
+            if (live ==2)
+            {
+                heart2.Visible = false;
+            }
+
+            if (live == 1)
+            {
+                heart1.Visible = false;
+            }
+            ball.Hide();
             MessageBox.Show("Ha perdido una vida.");
+            
+            if (live==0)
+            {
+                MessageBox.Show("Perdiste", "derrota", MessageBoxButtons.OK);
+                Dispose();
+                frmMainMenu GameOver = new frmMainMenu();
+                GameOver.Show();
+            }
+            else
+            {
+                KeyDown += new KeyEventHandler(frmGame_KeyDown);
+                LoadBall();
+                tmrSpeed.Start();
+               
+            }
         }
 
         private void bounceball()
         {
-            if (ball.Bottom > (int)(Height*0.9) + ball.Height)
+            if (ball.Bottom > (int)(Height*0.77) + ball.Height)
             {
                 if (live != 0)
                 {
