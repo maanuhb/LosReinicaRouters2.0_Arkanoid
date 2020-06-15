@@ -3,16 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="3fb578ff-b901-4f9a-a4c1-4f66c6f14b59" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Arkanoid/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Arkanoid/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/Arkanoid.exe" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/Arkanoid.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/Arkanoid.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/Arkanoid.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frmGame.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/frmGame.Designer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frmGame.cs" beforeDir="false" afterPath="$PROJECT_DIR$/frmGame.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frmGame.resx" beforeDir="false" afterPath="$PROJECT_DIR$/frmGame.resx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/Arkanoid.csproj.GenerateResource.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/Arkanoid.csproj.GenerateResource.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/Arkanoid.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/Arkanoid.csprojAssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/Arkanoid.exe" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/Arkanoid.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/Arkanoid.frmGame.resources" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/Arkanoid.frmGame.resources" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/Arkanoid.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/Arkanoid.pdb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,6 +111,8 @@
       <workItem from="1591922539763" duration="7000" />
       <workItem from="1591922564888" duration="672000" />
       <workItem from="1591931635960" duration="4663000" />
+      <workItem from="1592017030688" duration="666000" />
+      <workItem from="1592018695607" duration="434000" />
     </task>
     <servers />
   </component>
