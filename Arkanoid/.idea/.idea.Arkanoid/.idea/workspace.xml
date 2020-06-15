@@ -2,7 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3fb578ff-b901-4f9a-a4c1-4f66c6f14b59" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Arkanoid/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Arkanoid/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Arkanoid/.idea/projectSettingsUpdater.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Arkanoid/.idea/projectSettingsUpdater.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Arkanoid/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Arkanoid/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
+=======
+      <change beforePath="$PROJECT_DIR$/InstructionsUC.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/InstructionsUC.Designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/Arkanoid.exe" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/Arkanoid.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/Arkanoid.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/Arkanoid.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frmGame.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/frmGame.Designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frmGame.cs" beforeDir="false" afterPath="$PROJECT_DIR$/frmGame.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frmMainMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/frmMainMenu.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/Arkanoid.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/Arkanoid.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/Arkanoid.csproj.GenerateResource.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/Arkanoid.csproj.GenerateResource.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/Arkanoid.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/Arkanoid.csprojAssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/Arkanoid.exe" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/Arkanoid.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/Arkanoid.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/Arkanoid.pdb" afterDir="false" />
+>>>>>>> b0565b72e0d37771406ccc7afdd02f871f0fa79f
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,19 +29,16 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/ArkanoidDBcn.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/frmGame.Designer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/InstructionsUC.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Properties/AssemblyInfo.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/frmMainMenu.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/frmGame.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Program.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/frmMainMenu.Designer.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/GameData.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/InstructionsUC.Designer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/CustomPictureBox.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/InstructionsUC.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/frmMainMenu.Designer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/frmGame.Designer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GameData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Properties/Resources.resx" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/IL/D2517551-40D0-429B-A090-952F67A14DDF/73/0ec222d1/02000004pdb.il" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Properties/AssemblyInfo.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -38,10 +51,10 @@
         <option value="$PROJECT_DIR$/Program.cs" />
         <option value="$PROJECT_DIR$/GameData.cs" />
         <option value="$PROJECT_DIR$/InstructionsUC.Designer.cs" />
-        <option value="$PROJECT_DIR$/frmMainMenu.cs" />
         <option value="$PROJECT_DIR$/InstructionsUC.cs" />
-        <option value="$PROJECT_DIR$/frmGame.cs" />
         <option value="$PROJECT_DIR$/frmGame.Designer.cs" />
+        <option value="$PROJECT_DIR$/frmMainMenu.cs" />
+        <option value="$PROJECT_DIR$/frmGame.cs" />
       </list>
     </option>
   </component>
@@ -81,7 +94,7 @@
       <option name="PROJECT_KIND" value="Console" />
       <option name="PROJECT_TFM" value="" />
       <method v="2">
-        <option name="Build" />
+        <option name="Build" enabled="true" />
       </method>
     </configuration>
   </component>
@@ -111,43 +124,48 @@
       <workItem from="1591922539763" duration="7000" />
       <workItem from="1591922564888" duration="672000" />
       <workItem from="1591931635960" duration="4663000" />
+<<<<<<< HEAD
       <workItem from="1592017030688" duration="666000" />
       <workItem from="1592018695607" duration="434000" />
+=======
+      <workItem from="1591997170499" duration="639000" />
+      <workItem from="1592102834756" duration="3560000" />
+>>>>>>> b0565b72e0d37771406ccc7afdd02f871f0fa79f
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="1" />
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
   <component name="WindowStateProjectService">
-    <state x="506" y="287" key="Assembly removing confirmation dialog" timestamp="1591780225963">
+    <state x="506" y="287" key="Assembly removing confirmation dialog" timestamp="1592105782663">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="506" y="287" key="Assembly removing confirmation dialog/0.0.1280.680@0.0.1280.680" timestamp="1591780225963" />
-    <state width="1557" height="223" key="GridCell.Tab.0.bottom" timestamp="1591939710440">
-      <screen x="0" y="0" width="1600" height="860" />
+    <state x="506" y="287" key="Assembly removing confirmation dialog/0.0.1280.680@0.0.1280.680" timestamp="1592105782663" />
+    <state width="1237" height="10" key="GridCell.Tab.0.bottom" timestamp="1592106383138">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="2" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1591831691014" />
+    <state width="1237" height="10" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1592106383138" />
     <state width="1237" height="263" key="GridCell.Tab.0.bottom/0.0.1280.984@0.0.1280.984" timestamp="1591768812810" />
     <state width="1557" height="223" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1591939710440" />
-    <state width="1557" height="223" key="GridCell.Tab.0.center" timestamp="1591939710440">
-      <screen x="0" y="0" width="1600" height="860" />
+    <state width="1237" height="10" key="GridCell.Tab.0.center" timestamp="1592106383137">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="2" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1591831691014" />
+    <state width="1237" height="10" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1592106383137" />
     <state width="1237" height="263" key="GridCell.Tab.0.center/0.0.1280.984@0.0.1280.984" timestamp="1591768812810" />
     <state width="1557" height="223" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1591939710440" />
-    <state width="1557" height="223" key="GridCell.Tab.0.left" timestamp="1591939710440">
-      <screen x="0" y="0" width="1600" height="860" />
+    <state width="1237" height="10" key="GridCell.Tab.0.left" timestamp="1592106383137">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="2" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1591831690998" />
+    <state width="1237" height="10" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1592106383137" />
     <state width="1237" height="263" key="GridCell.Tab.0.left/0.0.1280.984@0.0.1280.984" timestamp="1591768812810" />
     <state width="1557" height="223" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1591939710440" />
-    <state width="1557" height="223" key="GridCell.Tab.0.right" timestamp="1591939710440">
-      <screen x="0" y="0" width="1600" height="860" />
+    <state width="1237" height="10" key="GridCell.Tab.0.right" timestamp="1592106383137">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="2" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1591831691014" />
+    <state width="1237" height="10" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1592106383137" />
     <state width="1237" height="263" key="GridCell.Tab.0.right/0.0.1280.984@0.0.1280.984" timestamp="1591768812810" />
     <state width="1557" height="223" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1591939710440" />
     <state width="1237" height="2" key="GridCell.Tab.1.bottom" timestamp="1591825757450">

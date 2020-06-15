@@ -17,6 +17,7 @@ namespace Arkanoid
         {
             frmGame PlayGame = new frmGame();
             PlayGame.Show();
+            Hide();
         }
        
         private void btnPlay_MouseHover(object sender, EventArgs e)
