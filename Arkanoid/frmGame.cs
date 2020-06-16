@@ -90,10 +90,13 @@ namespace Arkanoid
             //aqui reducimos el tamaño de los bloques para que pueda encajar en el espacio asignado del juego
             int pbHeight = (int) (Height * 0.3) / yAxis;
             int pbWidth = (int) (Width / 2.15) / xAxis;
+            string number="7";
+            int block = 0;
             cpb = new CustomPictureBox[yAxis, xAxis];
-
             for (int i = 0; i < yAxis; i++)
             {
+                block = RandomNumber(ref number) ;
+                number += block;
                 for (int j = 0; j < xAxis; j++)
                 {
                     cpb[i, j] = new CustomPictureBox();
@@ -118,6 +121,31 @@ namespace Arkanoid
                     Controls.Add(cpb[i, j]);
                 }
             }
+        }
+        
+        private int RandomNumber(ref string Number)
+        {
+            Random rnd = new Random();
+            int newNumber = 0;
+            bool Diff = true;
+            string ct ="" ;
+            do
+            {
+                if (Number.Length == 1)
+                {
+                    newNumber = rnd.Next(7);
+                    Diff = false;
+                }
+               
+                else
+                {
+                    newNumber = rnd.Next(7);
+                    ct = $"{newNumber}";
+                    if(!Number.Contains(ct))
+                    {Diff = false;}
+                }
+            } while (Diff);
+            return newNumber;
         }
 
         private void LoadBall()

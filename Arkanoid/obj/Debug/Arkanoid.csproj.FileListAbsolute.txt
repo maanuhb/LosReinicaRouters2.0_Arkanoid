@@ -177,3 +177,4 @@ C:\Users\PC\Desktop\LosReinicaRouters2.0_Arkanoid\Arkanoid\obj\Debug\Arkanoid.fr
 C:\Users\PC\Desktop\LosReinicaRouters2.0_Arkanoid\Arkanoid\obj\Debug\Arkanoid.InstructionsUC.resources
 C:\Users\PC\Desktop\LosReinicaRouters2.0_Arkanoid\Arkanoid\obj\Debug\Arkanoid.Top10UC.resources
 C:\Users\PC\Desktop\LosReinicaRouters2.0_Arkanoid\Arkanoid\obj\Debug\Arkanoid.csproj.CopyComplete
+C:\Users\13-V001LA\Desktop\d\LosReinicaRouters2.0_Arkanoid\Arkanoid\obj\Debug\Arkanoid.Top10UC.resources
