@@ -16,8 +16,12 @@ namespace Arkanoid
         private CustomPictureBox[,] cpb;
         private PictureBox ball;
         private bool[,] ArrayExist;
+<<<<<<< HEAD
         private int live = 3;
 
+=======
+        private int live = 4;
+>>>>>>> 1b81e46ef5f2878996f929d1d101879d7b6940c5
         public frmGame()
         {
             InitializeComponent();
@@ -29,13 +33,13 @@ namespace Arkanoid
             int y = (int) (Height * 0.20);
             picSpaceShip.Location = new Point(x,y);
         }
-
         //Movimiento de la plataforma con teclado
         private void frmGame_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode==Keys.Space)
+            if (e.KeyCode == Keys.Space)
             {
                 GameData.gamestarted = true;
+                tmrSpeed.Start();
             }
             if (!GameData.gamestarted)
             {
@@ -77,7 +81,6 @@ namespace Arkanoid
             picSpaceShip.Top = (Height - picSpaceShip.Height) - 130;
             LoadBall();
             LoadTiles();
-            tmrSpeed.Start();
         }
 
         //Llenamos la matriz con los bloques 
@@ -88,7 +91,6 @@ namespace Arkanoid
             //aqui reducimos el tamaño de los bloques para que pueda encajar en el espacio asignado del juego
             int pbHeight = (int)(Height * 0.3) / yAxis;
             int pbWidth = (int)(Width/2.15) / xAxis;
-
             cpb = new CustomPictureBox[yAxis, xAxis];
             
             for (int i = 0; i < yAxis; i++)
@@ -113,9 +115,7 @@ namespace Arkanoid
                     cpb[i, j].BackgroundImage = Image.FromFile("../../Resources/_" + (i + 0) + ".png");
                     cpb[i, j].BackgroundImageLayout = ImageLayout.Stretch;
                     cpb[i,j].BackColor = Color.Transparent;
-                    
                     cpb[i, j].Tag = "tileTag";
-                    
                     Controls.Add(cpb[i,j]);
                 }
             }
@@ -127,10 +127,8 @@ namespace Arkanoid
             ball.BackgroundImage = Image.FromFile("../../Resources/pelota.png");
             ball.BackgroundImageLayout = ImageLayout.Stretch;
             ball.BackColor = Color.Transparent;
-
             ball.Top = picSpaceShip.Top - ball.Height;
             ball.Left = picSpaceShip.Left + (picSpaceShip.Width / 2) - (ball.Width / 2);
-            
             Controls.Add(ball);
         }
 
@@ -147,6 +145,7 @@ namespace Arkanoid
         {
             tmrSpeed.Stop();
             --live;
+<<<<<<< HEAD
             if (live==2)
             {
                 heart3.Visible = false;
@@ -159,11 +158,22 @@ namespace Arkanoid
 
             if (live == 0)
             {
+=======
+            if (live==3)
+                heart3.Visible = false;
+            if (live ==2)
+                heart2.Visible = false;
+            if (live == 1)
+>>>>>>> 1b81e46ef5f2878996f929d1d101879d7b6940c5
                 heart1.Visible = false;
-            }
+            GameData.gamestarted = false;
             ball.Hide();
+<<<<<<< HEAD
             MessageBox.Show("Ha perdido una vida.","Arkanoid Message");
             
+=======
+            MessageBox.Show("Ha perdido una vida.");
+>>>>>>> 1b81e46ef5f2878996f929d1d101879d7b6940c5
             if (live==0)
             {
                 MessageBox.Show("Has perdido.", "Arkanoid Message", MessageBoxButtons.OK);
@@ -176,7 +186,6 @@ namespace Arkanoid
                 KeyDown += new KeyEventHandler(frmGame_KeyDown);
                 LoadBall();
                 tmrSpeed.Start();
-               
             }
         }
 
@@ -185,21 +194,7 @@ namespace Arkanoid
             if (ball.Bottom > (int)(Height*0.77) + ball.Height)
             {
                 if (live != 0)
-                {
-                    liveaction();                   
-                }else 
-                    Application.Exit();
-                /*
-                GameData.dirX = 0;
-                GameData.dirY = 0;
-                
-                if ( MessageBox.Show("Perdiste we", "Re manco pibe", MessageBoxButtons.OK, 
-                    MessageBoxIcon.Question)==DialogResult.OK)
-                {
-                    Close();
-                    frmMainMenu Prueba = new frmMainMenu();
-                    Prueba.Show();
-                }*/
+                    liveaction();
             }
 
             if (ball.Left < Width * 0.30 || ball.Right > Width * 0.75)
@@ -221,13 +216,6 @@ namespace Arkanoid
             {
                 for (int j = 0; j < 6; j++)
                 {
-                    /*var control = ArrayExist.OfType<bool>().Contains(true);
-                    if( ArrayExist[i, j] ) {
-                        GameData.dirY= - GameData.dirY;
-
-                        ArrayExist[i, j] = false;
-                    }*/
-                   
                     if (cpb[i,j]!= null && ball.Bounds.IntersectsWith(cpb[i, j].Bounds))
                     {
                         cpb[i, j].hits--;
@@ -236,12 +224,29 @@ namespace Arkanoid
                             Controls.Remove(cpb[i,j]);
                             cpb[i, j] = null;
                         }
-
                         GameData.dirY = -GameData.dirY;
                         return;
                     }
                 }
             }
+            if (GameOver())
+            {
+                tmrSpeed.Stop();
+                MessageBox.Show("ganaste", "victoria", MessageBoxButtons.OK);
+                Dispose();
+                frmMainMenu GameOver = new frmMainMenu();
+                GameOver.Show();
+            }
+        }
+        private bool GameOver()
+        {
+            for (int i = 0; i < 4; i++)
+            for (int j = 0; j < 6; j++)
+                if (cpb[i, j] != null)
+                {
+                    return false;
+                }
+            return true;
         }
     }
 }
