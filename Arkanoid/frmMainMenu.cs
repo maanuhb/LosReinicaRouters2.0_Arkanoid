@@ -6,9 +6,9 @@ namespace Arkanoid
 {
     public partial class frmMainMenu : Form
     {
+        private Top10UC ca;
         public frmMainMenu()
         {
-            
             InitializeComponent();
             instructionsUC1.Visible = false;
         }
@@ -32,7 +32,14 @@ namespace Arkanoid
         }
         private void btnTopScore_Click(object sender, EventArgs e)
         {
+            ca = new Top10UC();
+            ca.Dock = DockStyle.Fill;
+
+            ca.Width = Width;
+            ca.Height = Height;
             
+            tableLayoutPanel1.Hide();
+            Show(ca);
         }
         private void btnTopScore_MouseHover(object sender, EventArgs e)
         {

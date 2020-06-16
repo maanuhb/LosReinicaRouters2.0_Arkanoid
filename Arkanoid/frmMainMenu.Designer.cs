@@ -152,10 +152,11 @@ namespace Arkanoid
             // 
             this.instructionsUC1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.instructionsUC1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.instructionsUC1.Location = new System.Drawing.Point(3, 3);
+            this.instructionsUC1.Location = new System.Drawing.Point(2, 3);
+            this.instructionsUC1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.instructionsUC1.Name = "instructionsUC1";
             this.tableLayoutPanel1.SetRowSpan(this.instructionsUC1, 8);
-            this.instructionsUC1.Size = new System.Drawing.Size(378, 628);
+            this.instructionsUC1.Size = new System.Drawing.Size(380, 628);
             this.instructionsUC1.TabIndex = 4;
             // 
             // btnInstructions

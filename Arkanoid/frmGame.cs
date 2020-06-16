@@ -16,7 +16,7 @@ namespace Arkanoid
         private CustomPictureBox[,] cpb;
         private PictureBox ball;
         private bool[,] ArrayExist;
-        private int live = 4;
+        private int live = 3;
 
         public frmGame()
         {
@@ -147,26 +147,26 @@ namespace Arkanoid
         {
             tmrSpeed.Stop();
             --live;
-            if (live==3)
+            if (live==2)
             {
                 heart3.Visible = false;
             }
             
-            if (live ==2)
+            if (live ==1)
             {
                 heart2.Visible = false;
             }
 
-            if (live == 1)
+            if (live == 0)
             {
                 heart1.Visible = false;
             }
             ball.Hide();
-            MessageBox.Show("Ha perdido una vida.");
+            MessageBox.Show("Ha perdido una vida.","Arkanoid Message");
             
             if (live==0)
             {
-                MessageBox.Show("Perdiste", "derrota", MessageBoxButtons.OK);
+                MessageBox.Show("Has perdido.", "Arkanoid Message", MessageBoxButtons.OK);
                 Dispose();
                 frmMainMenu GameOver = new frmMainMenu();
                 GameOver.Show();

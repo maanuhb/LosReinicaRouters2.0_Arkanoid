@@ -119,6 +119,12 @@
 
         <Compile Include="Program.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
+        <Compile Include="Top10UC.cs">
+          <SubType>UserControl</SubType>
+        </Compile>
+        <Compile Include="Top10UC.Designer.cs">
+          <DependentUpon>Top10UC.cs</DependentUpon>
+        </Compile>
         <EmbeddedResource Include="frmGame.resx">
           <DependentUpon>frmGame.cs</DependentUpon>
         </EmbeddedResource>
@@ -137,6 +143,9 @@
             <AutoGen>True</AutoGen>
             <DependentUpon>Resources.resx</DependentUpon>
         </Compile>
+        <EmbeddedResource Include="Top10UC.resx">
+          <DependentUpon>Top10UC.cs</DependentUpon>
+        </EmbeddedResource>
         <None Include="packages.config" />
         <None Include="Properties\Settings.settings">
             <Generator>SettingsSingleFileGenerator</Generator>

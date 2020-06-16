@@ -30,8 +30,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources =
-                new System.ComponentModel.ComponentResourceManager(typeof(frmGame));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGame));
             this.picSpaceShip = new System.Windows.Forms.PictureBox();
             this.tmrSpeed = new System.Windows.Forms.Timer(this.components);
             this.label1 = new System.Windows.Forms.Label();
@@ -59,8 +58,7 @@
             // label1
             // 
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold,
-                System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label1.Location = new System.Drawing.Point(11, 24);
             this.label1.Name = "label1";
@@ -71,8 +69,7 @@
             // heart1
             // 
             this.heart1.BackColor = System.Drawing.Color.Transparent;
-            this.heart1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold,
-                System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.heart1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.heart1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.heart1.Image = ((System.Drawing.Image) (resources.GetObject("heart1.Image")));
             this.heart1.Location = new System.Drawing.Point(105, 9);
@@ -83,8 +80,7 @@
             // heart2
             // 
             this.heart2.BackColor = System.Drawing.Color.Transparent;
-            this.heart2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold,
-                System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.heart2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.heart2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.heart2.Image = ((System.Drawing.Image) (resources.GetObject("heart2.Image")));
             this.heart2.Location = new System.Drawing.Point(156, 9);
@@ -95,8 +91,7 @@
             // heart3
             // 
             this.heart3.BackColor = System.Drawing.Color.Transparent;
-            this.heart3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold,
-                System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.heart3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.heart3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.heart3.Image = ((System.Drawing.Image) (resources.GetObject("heart3.Image")));
             this.heart3.Location = new System.Drawing.Point(207, 9);
