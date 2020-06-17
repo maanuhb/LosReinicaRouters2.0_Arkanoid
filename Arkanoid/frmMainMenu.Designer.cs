@@ -2,7 +2,7 @@
 
 namespace Arkanoid
 {
-    partial class frmMainMenu
+    partial class FrmMainMenu
     {
         /// <summary>
         /// Required designer variable.
@@ -31,12 +31,11 @@ namespace Arkanoid
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMainMenu));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMainMenu));
             this.picArkanoidLetters = new System.Windows.Forms.PictureBox();
             this.btnPlay = new System.Windows.Forms.Button();
             this.btnTopScore = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.instructionsUC1 = new Arkanoid.InstructionsUC();
             this.btnInstructions = new System.Windows.Forms.Button();
@@ -108,16 +107,6 @@ namespace Arkanoid
             this.btnExit.MouseLeave += new System.EventHandler(this.btnExit_MouseLeave);
             this.btnExit.MouseHover += new System.EventHandler(this.btnExit_MouseHover);
             // 
-            // button1
-            // 
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Location = new System.Drawing.Point(1154, 586);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(182, 36);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Instructions";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
@@ -173,16 +162,15 @@ namespace Arkanoid
             this.btnInstructions.MouseLeave += new System.EventHandler(this.btnInstructions_MouseLeave);
             this.btnInstructions.MouseHover += new System.EventHandler(this.btnInstructions_MouseHover);
             // 
-            // frmMainMenu
+            // FrmMainMenu
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1348, 634);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Controls.Add(this.button1);
             this.Icon = ((System.Drawing.Icon) (resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Name = "frmMainMenu";
+            this.Name = "FrmMainMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             ((System.ComponentModel.ISupportInitialize) (this.picArkanoidLetters)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -193,7 +181,6 @@ namespace Arkanoid
         private System.Windows.Forms.Button btnInstructions;
         private System.Windows.Forms.Button btnPlay;
         private System.Windows.Forms.Button btnTopScore;
-        private System.Windows.Forms.Button button1;
         private Arkanoid.InstructionsUC instructionsUC1;
         private System.Windows.Forms.PictureBox picArkanoidLetters;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;

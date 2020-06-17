@@ -11,21 +11,23 @@ using System.Windows.Forms;
 
 namespace Arkanoid
 {
-    public partial class frmGame : Form
+    public partial class FrmGame : Form
     {
-        private CustomPictureBox[,] cpb;
-        private PictureBox ball;
+        private CustomPictureBox[,] _cpb;
+        private PictureBox _ball;
         private bool[,] ArrayExist;
 
-        private int live = 3;
+        private int _live = 3;
 
-        public frmGame()
+        public FrmGame()
         {
             InitializeComponent();
+            
             Height = ClientSize.Height;
             Width = ClientSize.Width;
+            
             WindowState = FormWindowState.Normal;
-            KeyDown += new KeyEventHandler(frmGame_KeyDown);
+            KeyDown += frmGame_KeyDown;
             int x = (int) (Width * 0.50);
             int y = (int) (Height * 0.20);
             picSpaceShip.Location = new Point(x, y);
@@ -47,12 +49,12 @@ namespace Arkanoid
                     case Keys.Right:
                         if (picSpaceShip.Location.X <= Width * 0.75 - picSpaceShip.Width)
                             picSpaceShip.Left += 10;
-                        ball.Left = picSpaceShip.Left + (picSpaceShip.Width / 2) - (ball.Width / 2);
+                        _ball.Left = picSpaceShip.Left + (picSpaceShip.Width / 2) - (_ball.Width / 2);
                         break;
                     case Keys.Left:
                         if (picSpaceShip.Location.X >= Width * 0.40 - picSpaceShip.Width)
                             picSpaceShip.Left -= 10;
-                        ball.Left = picSpaceShip.Left + (picSpaceShip.Width / 2) - (ball.Width / 2);
+                        _ball.Left = picSpaceShip.Left + (picSpaceShip.Width / 2) - (_ball.Width / 2);
                         break;
                 }
             }
@@ -91,151 +93,148 @@ namespace Arkanoid
             int pbHeight = (int) (Height * 0.3) / yAxis;
             int pbWidth = (int) (Width / 2.15) / xAxis;
             string number="7";
-            int block = 0;
-            cpb = new CustomPictureBox[yAxis, xAxis];
+            _cpb = new CustomPictureBox[yAxis, xAxis];
             for (int i = 0; i < yAxis; i++)
             {
-                block = RandomNumber(ref number) ;
+                var block = RandomNumber(ref number);
                 number += block;
                 for (int j = 0; j < xAxis; j++)
                 {
-                    cpb[i, j] = new CustomPictureBox();
+                    _cpb[i, j] = new CustomPictureBox();
 
                     if (i == 0)
-                        cpb[i, j].hits = 3;
+                        _cpb[i, j].hits = 3;
                     else if (i == 6)
-                        cpb[i, j].hits = 2;
+                        _cpb[i, j].hits = 2;
                     else
-                        cpb[i, j].hits = 1;
+                        _cpb[i, j].hits = 1;
 
-                    cpb[i, j].Height = pbHeight;
-                    cpb[i, j].Width = pbWidth;
+                    _cpb[i, j].Height = pbHeight;
+                    _cpb[i, j].Width = pbWidth;
+                    
                     //Aqui lo que hicimos fue que le cambiamos las coordenadas de aparicion de los bloques, para que 
                     //encajara con el espacio asignado del juego
-                    cpb[i, j].Left = (int) (Width * 0.30) + j * pbWidth;
-                    cpb[i, j].Top = (int) (Height * 0.22) + i * pbHeight;
-                    cpb[i, j].BackgroundImage = Image.FromFile("../../Resources/_" + (i + 0) + ".png");
-                    cpb[i, j].BackgroundImageLayout = ImageLayout.Stretch;
-                    cpb[i, j].BackColor = Color.Transparent;
-                    cpb[i, j].Tag = "tileTag";
-                    Controls.Add(cpb[i, j]);
+                    _cpb[i, j].Left = (int) (Width * 0.30) + j * pbWidth;
+                    _cpb[i, j].Top = (int) (Height * 0.22) + i * pbHeight;
+                    _cpb[i, j].BackgroundImage = Image.FromFile("../../Resources/_" + (i + 0) + ".png");
+                    _cpb[i, j].BackgroundImageLayout = ImageLayout.Stretch;
+                    _cpb[i, j].BackColor = Color.Transparent;
+                    _cpb[i, j].Tag = "tileTag";
+                    Controls.Add(_cpb[i, j]);
                 }
             }
         }
         
-        private int RandomNumber(ref string Number)
+        private int RandomNumber(ref string number)
         {
             Random rnd = new Random();
             int newNumber = 0;
-            bool Diff = true;
-            string ct ="" ;
+            bool diff = true;
             do
             {
-                if (Number.Length == 1)
+                if (number.Length == 1)
                 {
                     newNumber = rnd.Next(7);
-                    Diff = false;
+                    diff = false;
                 }
                
                 else
                 {
                     newNumber = rnd.Next(7);
-                    ct = $"{newNumber}";
-                    if(!Number.Contains(ct))
-                    {Diff = false;}
+                    var ct =$"{newNumber}" ;
+                    if(!number.Contains(ct))
+                    {diff = false;}
                 }
-            } while (Diff);
+            } while (diff);
             return newNumber;
         }
 
         private void LoadBall()
         {
-            ball = new PictureBox();
-            ball.Width = ball.Height = 20;
-            ball.BackgroundImage = Image.FromFile("../../Resources/pelota.png");
-            ball.BackgroundImageLayout = ImageLayout.Stretch;
-            ball.BackColor = Color.Transparent;
-            ball.Top = picSpaceShip.Top - ball.Height;
-            ball.Left = picSpaceShip.Left + (picSpaceShip.Width / 2) - (ball.Width / 2);
-            Controls.Add(ball);
+            _ball = new PictureBox();
+            _ball.Width = _ball.Height = 20;
+            _ball.BackgroundImage = Image.FromFile("../../Resources/pelota.png");
+            _ball.BackgroundImageLayout = ImageLayout.Stretch;
+            _ball.BackColor = Color.Transparent;
+            _ball.Top = picSpaceShip.Top - _ball.Height;
+            _ball.Left = picSpaceShip.Left + (picSpaceShip.Width / 2) - (_ball.Width / 2);
+            Controls.Add(_ball);
         }
 
         private void tmrSpeed_Tick(object sender, EventArgs e)
         {
             if (!GameData.gamestarted)
                 return;
-            ball.Left += GameData.dirX;
-            ball.Top += GameData.dirY;
-            bounceball();
+            _ball.Left += GameData.dirX;
+            _ball.Top += GameData.dirY;
+            Bounceball();
         }
 
-        private void liveaction()
+        private void Liveaction()
         {
             tmrSpeed.Stop();
-            --live;
+            --_live;
 
-            if (live != 0)
-            {
-                if (live == 3)
+            
+                if (_live == 2)
                     heart3.Visible = false;
-                if (live == 2)
+                if (_live == 1) 
                     heart2.Visible = false;
-                if (live == 1)
-                    heart1.Visible = false;
+                
                 GameData.gamestarted = false;
-                ball.Hide();
- 
-                MessageBox.Show("Ha perdido una vida.", "Arkanoid Message");
-                if (live == 0)
+                _ball.Hide();
+                
+                if (_live == 0)
                 {
+                    heart1.Visible = false;
                     MessageBox.Show("Has perdido.", "Arkanoid Message", MessageBoxButtons.OK);
                     Dispose();
-                    frmMainMenu GameOver = new frmMainMenu();
+                    FrmMainMenu GameOver = new FrmMainMenu();
                     GameOver.Show();
                 }
                 else
                 {
-                    KeyDown += new KeyEventHandler(frmGame_KeyDown);
+                    MessageBox.Show("Has perdido una vida, re manco", "Arkanoid message");
+                    KeyDown += frmGame_KeyDown;
                     LoadBall();
-                    tmrSpeed.Start();
-                }
+                    tmrSpeed.Start(); 
             }
         }
 
-        private void bounceball()
+        private void Bounceball()
             {
-                if (ball.Bottom > (int) (Height * 0.77) + ball.Height)
+                if (_ball.Bottom > (int) (Height * 0.77) + _ball.Height)
                 {
-                    if (live != 0)
-                        liveaction();
+                    if (_live != 0)
+                        Liveaction();
                 }
 
-                if (ball.Left < Width * 0.30 || ball.Right > Width * 0.75)
+                if (_ball.Left < Width * 0.30 || _ball.Right > Width * 0.75)
                 {
                     GameData.dirX = -GameData.dirX;
                     return;
                 }
 
-                if (ball.Top < Height - Height * 0.77)
+                if (_ball.Top < Height - Height * 0.77)
                 {
                     GameData.dirY = -GameData.dirY;
                     return;
                 }
 
-                if (ball.Bounds.IntersectsWith(picSpaceShip.Bounds))
+                if (_ball.Bounds.IntersectsWith(picSpaceShip.Bounds))
                     GameData.dirY = -GameData.dirY;
 
                 for (int i = 3; i >= 0; i--)
                 {
                     for (int j = 0; j < 6; j++)
                     {
-                        if (cpb[i, j] != null && ball.Bounds.IntersectsWith(cpb[i, j].Bounds))
+                        if (_cpb[i, j] != null && _ball.Bounds.IntersectsWith(_cpb[i, j].Bounds))
                         {
-                            cpb[i, j].hits--;
-                            if (cpb[i, j].hits == 0)
+                            _cpb[i, j].hits--;
+                            if (_cpb[i, j].hits == 0)
                             {
-                                Controls.Remove(cpb[i, j]);
-                                cpb[i, j] = null;
+                                Controls.Remove(_cpb[i, j]);
+                                _cpb[i, j] = null;
                             }
 
                             GameData.dirY = -GameData.dirY;
@@ -247,10 +246,10 @@ namespace Arkanoid
                 if (GameOver())
                 {
                     tmrSpeed.Stop();
-                    MessageBox.Show("ganaste", "victoria", MessageBoxButtons.OK);
+                    MessageBox.Show("Felicidades, Ganaste.", "Arkanoid message", MessageBoxButtons.OK);
                     Dispose();
-                    frmMainMenu GameOver = new frmMainMenu();
-                    GameOver.Show();
+                    FrmMainMenu gameOver = new FrmMainMenu();
+                    gameOver.Show();
                 }
             }
 
@@ -258,7 +257,7 @@ namespace Arkanoid
             {
                 for (int i = 0; i < 4; i++)
                 for (int j = 0; j < 6; j++)
-                    if (cpb[i, j] != null)
+                    if (_cpb[i, j] != null)
                     { 
                         return false;
                     } 

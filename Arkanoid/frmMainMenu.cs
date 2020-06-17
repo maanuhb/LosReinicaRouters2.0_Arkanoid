@@ -4,19 +4,20 @@ using System.Windows.Forms;
 
 namespace Arkanoid
 {
-    public partial class frmMainMenu : Form
+    public partial class FrmMainMenu : Form
     {
-        private Top10UC ca;
-        public frmMainMenu()
+        Top10UC _uc = new Top10UC();
+        public FrmMainMenu()
         {
             InitializeComponent();
             instructionsUC1.Visible = false;
+            
         }
 
         private void btnPlay_Click(object sender, EventArgs e)
         {
-            frmGame PlayGame = new frmGame();
-            PlayGame.Show();
+            FrmGame playGame = new FrmGame();
+            playGame.Show();
             Hide();
         }
        
@@ -32,14 +33,16 @@ namespace Arkanoid
         }
         private void btnTopScore_Click(object sender, EventArgs e)
         {
-            ca = new Top10UC();
-            ca.Dock = DockStyle.Fill;
+          tableLayoutPanel1.Controls.Remove(instructionsUC1);
+          
+          _uc = new Top10UC();
+          _uc.Dock = DockStyle.Fill;
 
-            ca.Width = Width;
-            ca.Height = Height;
-            
-            tableLayoutPanel1.Hide();
-            Show(ca);
+          _uc.Width = Width;
+          _uc.Height = Height;
+          
+          tableLayoutPanel1.Hide();
+         Controls.Add(_uc);
         }
         private void btnTopScore_MouseHover(object sender, EventArgs e)
         {
@@ -54,7 +57,7 @@ namespace Arkanoid
         private void btnExit_Click(object sender, EventArgs e)
         {
             
-            if ( MessageBox.Show("estas seguro que deseas salir ?", "Salida", MessageBoxButtons.YesNo, 
+            if ( MessageBox.Show("Estas seguro que deseas salir ?", "Arkanoid Message", MessageBoxButtons.YesNo, 
                 MessageBoxIcon.Question)==DialogResult.Yes)
             {
                 Application.Exit();
