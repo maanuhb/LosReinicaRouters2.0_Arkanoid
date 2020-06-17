@@ -81,17 +81,6 @@ namespace Arkanoid
         }
 
         
-        
-        protected override CreateParams CreateParams
-        {
-            get
-            {
-                CreateParams handleParam = base.CreateParams;
-                handleParam.ExStyle |= 0x02000000;   // WS_EX_COMPOSITED       
-                return handleParam;
-            }
-        }
-
 
         //Llenamos la matriz con los bloques 
         private void LoadTiles()
@@ -205,38 +194,16 @@ namespace Arkanoid
         {
             tmrSpeed.Stop();
             --_live;
-            
-                if (_live == 2)
-                    heart3.Visible = false;
-                if (_live == 1) 
-                    heart2.Visible = false;
-                
-                GameData.gamestarted = false;
-                _ball.Hide();
-                
-                if (_live == 0)
-                {
-                    heart1.Visible = false;
-                    MessageBox.Show("Has perdido.", "Arkanoid Message", MessageBoxButtons.OK);
-                    Dispose();
-                    FrmMainMenu GameOver = new FrmMainMenu();
-                    GameOver.Show();
-                }
-                else
-                {
-                    MessageBox.Show("Has perdido una vida, re manco", "Arkanoid message");
-                    KeyDown += frmGame_KeyDown;
-                    LoadBall();
-                    tmrSpeed.Start(); 
 
-            --live;
-            if (live == 2)
+            if (_live == 2)
                 heart3.Visible = false;
-            if (live == 1) 
+            if (_live == 1)
                 heart2.Visible = false;
+
             GameData.gamestarted = false;
-            ball.Hide();
-            if (live == 0)
+            _ball.Hide();
+
+            if (_live == 0)
             {
                 heart1.Visible = false;
                 MessageBox.Show("Has perdido.", "Arkanoid Message", MessageBoxButtons.OK);
@@ -246,10 +213,10 @@ namespace Arkanoid
             }
             else
             {
-                MessageBox.Show("Has perdido una vida", "Arkanoid message");
+                MessageBox.Show("Has perdido una vida, re manco", "Arkanoid message");
                 KeyDown += frmGame_KeyDown;
                 LoadBall();
-                tmrSpeed.Start(); 
+                tmrSpeed.Start();
             }
         }
 
@@ -286,8 +253,6 @@ namespace Arkanoid
                             //Calculando el score para mostrar
                             _score += (int)(_cpb[i, j].hits * _amountTicks);
                             
-                            _cpb[i, j].hits--;
-                            if (_cpb[i, j].hits == 0)
                             cpb[i, j].hits--;
                             if (cpb[i, j].hits == 0)
                             {
@@ -314,7 +279,6 @@ namespace Arkanoid
                         }
                     }
                 }
-
                 if (GameOver())
                 {
                     tmrSpeed.Stop();
