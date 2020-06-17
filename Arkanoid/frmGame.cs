@@ -6,13 +6,13 @@ namespace Arkanoid
 {
     public partial class FrmGame : Form
     {
-        private CustomPictureBox[,] _cpb;
-        private PictureBox _ball;
+        private CustomPictureBox[,] cpb;
+        private PictureBox ball;
         private bool[,] ArrayExist;
         private int _score = 0;
         public double _amountTicks = 0;
 
-        private int _live = 3;
+        private int live = 3;
 
         public FrmGame()
         {
@@ -44,12 +44,12 @@ namespace Arkanoid
                     case Keys.Right:
                         if (picSpaceShip.Location.X <= Width * 0.75 - picSpaceShip.Width)
                             picSpaceShip.Left += 10;
-                        _ball.Left = picSpaceShip.Left + (picSpaceShip.Width / 2) - (_ball.Width / 2);
+                        ball.Left = picSpaceShip.Left + (picSpaceShip.Width / 2) - (ball.Width / 2);
                         break;
                     case Keys.Left:
                         if (picSpaceShip.Location.X >= Width * 0.40 - picSpaceShip.Width)
                             picSpaceShip.Left -= 10;
-                        _ball.Left = picSpaceShip.Left + (picSpaceShip.Width / 2) - (_ball.Width / 2);
+                        ball.Left = picSpaceShip.Left + (picSpaceShip.Width / 2) - (ball.Width / 2);
                         break;
                 }
             }
@@ -79,9 +79,21 @@ namespace Arkanoid
             LoadTiles();
             lblScore.Text = _score.ToString();
         }
+<<<<<<< HEAD
         
         
 
+=======
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams handleParam = base.CreateParams;
+                handleParam.ExStyle |= 0x02000000;   // WS_EX_COMPOSITED       
+                return handleParam;
+            }
+        }
+>>>>>>> 3e4c4ac446ac0d35a9936bd6f5ff1e2f54c84e3a
         //Llenamos la matriz con los bloques 
         private void LoadTiles()
         {
@@ -91,34 +103,43 @@ namespace Arkanoid
             int pbHeight = (int) (Height * 0.3) / yAxis;
             int pbWidth = (int) (Width / 2.15) / xAxis;
             string number="7";
-            _cpb = new CustomPictureBox[yAxis, xAxis];
+            int block;
+            cpb = new CustomPictureBox[yAxis, xAxis];
             for (int i = 0; i < yAxis; i++)
             {
-                var block = RandomNumber(ref number);
+                block = RandomNumber(ref number);
                 number += block;
                 for (int j = 0; j < xAxis; j++)
                 {
-                    _cpb[i, j] = new CustomPictureBox();
+                    cpb[i, j] = new CustomPictureBox();
 
-                    if (i == 0)
-                        _cpb[i, j].hits = 3;
-                    else if (i == 6)
-                        _cpb[i, j].hits = 2;
+                    if (block == 0)
+                    {
+                        cpb[i, j].hits = 3;
+                        cpb[i, j].Tag = "ThreeHit";
+                    }
+                    else if (block == 6)
+                    {
+                        cpb[i, j].hits = 2;
+                        cpb[i, j].Tag = "TwoHit";
+                    }
                     else
-                        _cpb[i, j].hits = 1;
+                    {
+                        cpb[i, j].hits = 1;
+                        cpb[i, j].Tag = "OneHit";
+                    }
 
-                    _cpb[i, j].Height = pbHeight;
-                    _cpb[i, j].Width = pbWidth;
+                    cpb[i, j].Height = pbHeight;
+                    cpb[i, j].Width = pbWidth;
                     
                     //Aqui lo que hicimos fue que le cambiamos las coordenadas de aparicion de los bloques, para que 
                     //encajara con el espacio asignado del juego
-                    _cpb[i, j].Left = (int) (Width * 0.30) + j * pbWidth;
-                    _cpb[i, j].Top = (int) (Height * 0.22) + i * pbHeight;
-                    _cpb[i, j].BackgroundImage = Image.FromFile("../../Resources/_" + (i + 0) + ".png");
-                    _cpb[i, j].BackgroundImageLayout = ImageLayout.Stretch;
-                    _cpb[i, j].BackColor = Color.Transparent;
-                    _cpb[i, j].Tag = "tileTag";
-                    Controls.Add(_cpb[i, j]);
+                    cpb[i, j].Left = (int) (Width * 0.30) + j * pbWidth;
+                    cpb[i, j].Top = (int) (Height * 0.22) + i * pbHeight;
+                    cpb[i, j].BackgroundImage = Image.FromFile("../../Resources/_" + (block) + ".png");
+                    cpb[i, j].BackgroundImageLayout = ImageLayout.Stretch;
+                    cpb[i, j].BackColor = Color.Transparent;
+                    Controls.Add(cpb[i, j]);
                 }
             }
         }
@@ -127,6 +148,7 @@ namespace Arkanoid
             Random rnd = new Random();
             int newNumber;
             bool diff = true;
+            string ct;
             do
             {
                 if (number.Length == 1)
@@ -134,11 +156,10 @@ namespace Arkanoid
                     newNumber = rnd.Next(7);
                     diff = false;
                 }
-               
                 else
                 {
                     newNumber = rnd.Next(7);
-                    var ct =$"{newNumber}" ;
+                    ct =$"{newNumber}" ;
                     if(!number.Contains(ct))
                     {diff = false;}
                 }
@@ -148,14 +169,14 @@ namespace Arkanoid
 
         private void LoadBall()
         {
-            _ball = new PictureBox();
-            _ball.Width = _ball.Height = 20;
-            _ball.BackgroundImage = Image.FromFile("../../Resources/pelota.png");
-            _ball.BackgroundImageLayout = ImageLayout.Stretch;
-            _ball.BackColor = Color.Transparent;
-            _ball.Top = picSpaceShip.Top - _ball.Height;
-            _ball.Left = picSpaceShip.Left + (picSpaceShip.Width / 2) - (_ball.Width / 2);
-            Controls.Add(_ball);
+            ball = new PictureBox();
+            ball.Width = ball.Height = 20;
+            ball.BackgroundImage = Image.FromFile("../../Resources/pelota.png");
+            ball.BackgroundImageLayout = ImageLayout.Stretch;
+            ball.BackColor = Color.Transparent;
+            ball.Top = picSpaceShip.Top - ball.Height;
+            ball.Left = picSpaceShip.Left + (picSpaceShip.Width / 2) - (ball.Width / 2);
+            Controls.Add(ball);
         }
         
 
@@ -166,8 +187,8 @@ namespace Arkanoid
             
             if (!GameData.gamestarted)
                 return;
-            _ball.Left += GameData.dirX;
-            _ball.Top += GameData.dirY;
+            ball.Left += GameData.dirX;
+            ball.Top += GameData.dirY;
             Bounceball();
         }
         
@@ -184,6 +205,7 @@ namespace Arkanoid
         private void Liveaction()
         {
             tmrSpeed.Stop();
+<<<<<<< HEAD
             --_live;
             
                 if (_live == 2)
@@ -208,48 +230,87 @@ namespace Arkanoid
                     KeyDown += frmGame_KeyDown;
                     LoadBall();
                     tmrSpeed.Start(); 
+=======
+            --live;
+            if (live == 2)
+                heart3.Visible = false;
+            if (live == 1) 
+                heart2.Visible = false;
+            GameData.gamestarted = false;
+            ball.Hide();
+            if (live == 0)
+            {
+                heart1.Visible = false;
+                MessageBox.Show("Has perdido.", "Arkanoid Message", MessageBoxButtons.OK);
+                Dispose();
+                FrmMainMenu GameOver = new FrmMainMenu();
+                GameOver.Show();
+            }
+            else
+            {
+                MessageBox.Show("Has perdido una vida", "Arkanoid message");
+                KeyDown += frmGame_KeyDown;
+                LoadBall();
+                tmrSpeed.Start(); 
+>>>>>>> 3e4c4ac446ac0d35a9936bd6f5ff1e2f54c84e3a
             }
         }
 
         private void Bounceball()
             {
-                if (_ball.Bottom > (int) (Height * 0.77) + _ball.Height)
+                if (ball.Bottom > (int) (Height * 0.77) + ball.Height)
                 {
-                    if (_live != 0)
+                    if (live != 0)
                         Liveaction();
                 }
 
-                if (_ball.Left < Width * 0.30 || _ball.Right > Width * 0.75)
+                if (ball.Left < Width * 0.30 || ball.Right > Width * 0.75)
                 {
                     GameData.dirX = -GameData.dirX;
                     return;
                 }
 
-                if (_ball.Top < Height - Height * 0.77)
+                if (ball.Top < Height - Height * 0.77)
                 {
                     GameData.dirY = -GameData.dirY;
                     return;
                 }
 
-                if (_ball.Bounds.IntersectsWith(picSpaceShip.Bounds))
+                if (ball.Bounds.IntersectsWith(picSpaceShip.Bounds))
                     GameData.dirY = -GameData.dirY;
 
                 for (int i = 3; i >= 0; i--)
                 {
                     for (int j = 0; j < 6; j++)
                     {
-                        if (_cpb[i, j] != null && _ball.Bounds.IntersectsWith(_cpb[i, j].Bounds))
+                        if (cpb[i, j] != null && ball.Bounds.IntersectsWith(cpb[i, j].Bounds))
                         {
+<<<<<<< HEAD
                             //Calculando el score para mostrar
                             _score += (int)(_cpb[i, j].hits * _amountTicks);
                             
                             _cpb[i, j].hits--;
                             if (_cpb[i, j].hits == 0)
+=======
+                            cpb[i, j].hits--;
+                            if (cpb[i, j].hits == 0)
+>>>>>>> 3e4c4ac446ac0d35a9936bd6f5ff1e2f54c84e3a
                             {
-                                Controls.Remove(_cpb[i, j]);
-                                _cpb[i, j] = null;
+                                Controls.Remove(cpb[i, j]);
+                                cpb[i, j] = null;
                             }
-
+                            else if (cpb[i, j].Tag.Equals("ThreeHit")&& cpb[i, j].hits==2)
+                            {
+                                cpb[i, j].BackgroundImage = Image.FromFile("../../Resources/_01.png");
+                            }
+                            else if (cpb[i, j].Tag.Equals("ThreeHit")&& cpb[i, j].hits==1)
+                            {
+                                cpb[i, j].BackgroundImage = Image.FromFile("../../Resources/_02.png");
+                            }
+                            else if (cpb[i, j].Tag.Equals("TwoHit"))
+                            {
+                                cpb[i, j].BackgroundImage = Image.FromFile("../../Resources/_61.png");
+                            }
                             GameData.dirY = -GameData.dirY;
                             
                             //mostrando score
@@ -273,7 +334,7 @@ namespace Arkanoid
             {
                 for (int i = 0; i < 4; i++)
                 for (int j = 0; j < 6; j++)
-                    if (_cpb[i, j] != null)
+                    if (cpb[i, j] != null)
                     { 
                         return false;
                     } 
