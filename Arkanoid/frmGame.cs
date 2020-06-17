@@ -6,13 +6,13 @@ namespace Arkanoid
 {
     public partial class FrmGame : Form
     {
-        private CustomPictureBox[,] cpb;
-        private PictureBox ball;
+        private CustomPictureBox[,] _cpb;
+        private PictureBox _ball;
         private bool[,] ArrayExist;
         private int _score = 0;
-        public double _amountTicks = 0;
-
-        private int live = 3;
+        public double AmountTicks = 0;
+        private int _live = 3;
+        
 
         public FrmGame()
         {
@@ -44,12 +44,12 @@ namespace Arkanoid
                     case Keys.Right:
                         if (picSpaceShip.Location.X <= Width * 0.75 - picSpaceShip.Width)
                             picSpaceShip.Left += 10;
-                        ball.Left = picSpaceShip.Left + (picSpaceShip.Width / 2) - (ball.Width / 2);
+                        _ball.Left = picSpaceShip.Left + (picSpaceShip.Width / 2) - (_ball.Width / 2);
                         break;
                     case Keys.Left:
                         if (picSpaceShip.Location.X >= Width * 0.40 - picSpaceShip.Width)
                             picSpaceShip.Left -= 10;
-                        ball.Left = picSpaceShip.Left + (picSpaceShip.Width / 2) - (ball.Width / 2);
+                        _ball.Left = picSpaceShip.Left + (picSpaceShip.Width / 2) - (_ball.Width / 2);
                         break;
                 }
             }
@@ -92,42 +92,42 @@ namespace Arkanoid
             int pbWidth = (int) (Width / 2.15) / xAxis;
             string number="7";
             int block;
-            cpb = new CustomPictureBox[yAxis, xAxis];
+            _cpb = new CustomPictureBox[yAxis, xAxis];
             for (int i = 0; i < yAxis; i++)
             {
                 block = RandomNumber(ref number);
                 number += block;
                 for (int j = 0; j < xAxis; j++)
                 {
-                    cpb[i, j] = new CustomPictureBox();
+                    _cpb[i, j] = new CustomPictureBox();
 
                     if (block == 0)
                     {
-                        cpb[i, j].hits = 3;
-                        cpb[i, j].Tag = "ThreeHit";
+                        _cpb[i, j].hits = 3;
+                        _cpb[i, j].Tag = "ThreeHit";
                     }
                     else if (block == 6)
                     {
-                        cpb[i, j].hits = 2;
-                        cpb[i, j].Tag = "TwoHit";
+                        _cpb[i, j].hits = 2;
+                        _cpb[i, j].Tag = "TwoHit";
                     }
                     else
                     {
-                        cpb[i, j].hits = 1;
-                        cpb[i, j].Tag = "OneHit";
+                        _cpb[i, j].hits = 1;
+                        _cpb[i, j].Tag = "OneHit";
                     }
 
-                    cpb[i, j].Height = pbHeight;
-                    cpb[i, j].Width = pbWidth;
+                    _cpb[i, j].Height = pbHeight;
+                    _cpb[i, j].Width = pbWidth;
                     
                     //Aqui lo que hicimos fue que le cambiamos las coordenadas de aparicion de los bloques, para que 
                     //encajara con el espacio asignado del juego
-                    cpb[i, j].Left = (int) (Width * 0.30) + j * pbWidth;
-                    cpb[i, j].Top = (int) (Height * 0.22) + i * pbHeight;
-                    cpb[i, j].BackgroundImage = Image.FromFile("../../Resources/_" + (block) + ".png");
-                    cpb[i, j].BackgroundImageLayout = ImageLayout.Stretch;
-                    cpb[i, j].BackColor = Color.Transparent;
-                    Controls.Add(cpb[i, j]);
+                    _cpb[i, j].Left = (int) (Width * 0.30) + j * pbWidth;
+                    _cpb[i, j].Top = (int) (Height * 0.22) + i * pbHeight;
+                    _cpb[i, j].BackgroundImage = Image.FromFile("../../Resources/_" + (block) + ".png");
+                    _cpb[i, j].BackgroundImageLayout = ImageLayout.Stretch;
+                    _cpb[i, j].BackColor = Color.Transparent;
+                    Controls.Add(_cpb[i, j]);
                 }
             }
         }
@@ -157,26 +157,26 @@ namespace Arkanoid
 
         private void LoadBall()
         {
-            ball = new PictureBox();
-            ball.Width = ball.Height = 20;
-            ball.BackgroundImage = Image.FromFile("../../Resources/pelota.png");
-            ball.BackgroundImageLayout = ImageLayout.Stretch;
-            ball.BackColor = Color.Transparent;
-            ball.Top = picSpaceShip.Top - ball.Height;
-            ball.Left = picSpaceShip.Left + (picSpaceShip.Width / 2) - (ball.Width / 2);
-            Controls.Add(ball);
+            _ball = new PictureBox();
+            _ball.Width = _ball.Height = 20;
+            _ball.BackgroundImage = Image.FromFile("../../Resources/pelota.png");
+            _ball.BackgroundImageLayout = ImageLayout.Stretch;
+            _ball.BackColor = Color.Transparent;
+            _ball.Top = picSpaceShip.Top - _ball.Height;
+            _ball.Left = picSpaceShip.Left + (picSpaceShip.Width / 2) - (_ball.Width / 2);
+            Controls.Add(_ball);
         }
         
 
         private void tmrSpeed_Tick(object sender, EventArgs e)
         {
             //ticks realizados para calcular el score
-            _amountTicks += 0.01;
+            AmountTicks += 0.09;
             
             if (!GameData.gamestarted)
                 return;
-            ball.Left += GameData.dirX;
-            ball.Top += GameData.dirY;
+            _ball.Left += GameData.dirX;
+            _ball.Top += GameData.dirY;
             Bounceball();
         }
         
@@ -206,7 +206,7 @@ namespace Arkanoid
             if (_live == 0)
             {
                 heart1.Visible = false;
-                MessageBox.Show("Has perdido.", "Arkanoid Message", MessageBoxButtons.OK);
+                MessageBox.Show("Has perdido, Score final: " + _score, "Arkanoid Message", MessageBoxButtons.OK);
                 Dispose();
                 FrmMainMenu GameOver = new FrmMainMenu();
                 GameOver.Show();
@@ -222,54 +222,53 @@ namespace Arkanoid
 
         private void Bounceball()
             {
-                if (ball.Bottom > (int) (Height * 0.77) + ball.Height)
+                if (_ball.Bottom > (int) (Height * 0.77) + _ball.Height)
                 {
-                    if (live != 0)
+                    if (_live != 0)
                         Liveaction();
                 }
 
-                if (ball.Left < Width * 0.30 || ball.Right > Width * 0.75)
+                if (_ball.Left < Width * 0.30 || _ball.Right > Width * 0.75)
                 {
                     GameData.dirX = -GameData.dirX;
                     return;
                 }
 
-                if (ball.Top < Height - Height * 0.77)
+                if (_ball.Top < Height - Height * 0.77)
                 {
                     GameData.dirY = -GameData.dirY;
                     return;
                 }
 
-                if (ball.Bounds.IntersectsWith(picSpaceShip.Bounds))
+                if (_ball.Bounds.IntersectsWith(picSpaceShip.Bounds))
                     GameData.dirY = -GameData.dirY;
 
                 for (int i = 3; i >= 0; i--)
                 {
                     for (int j = 0; j < 6; j++)
                     {
-                        if (cpb[i, j] != null && ball.Bounds.IntersectsWith(cpb[i, j].Bounds))
+                        if (_cpb[i, j] != null && _ball.Bounds.IntersectsWith(_cpb[i, j].Bounds))
                         {
-
                             //Calculando el score para mostrar
-                            _score += (int)(_cpb[i, j].hits * _amountTicks);
+                            _score += (int)(_cpb[i, j].hits * AmountTicks);
                             
-                            cpb[i, j].hits--;
-                            if (cpb[i, j].hits == 0)
+                            _cpb[i, j].hits--;
+                            if (_cpb[i, j].hits == 0)
                             {
-                                Controls.Remove(cpb[i, j]);
-                                cpb[i, j] = null;
+                                Controls.Remove(_cpb[i, j]);
+                                _cpb[i, j] = null;
                             }
-                            else if (cpb[i, j].Tag.Equals("ThreeHit")&& cpb[i, j].hits==2)
+                            else if (_cpb[i, j].Tag.Equals("ThreeHit")&& _cpb[i, j].hits==2)
                             {
-                                cpb[i, j].BackgroundImage = Image.FromFile("../../Resources/_01.png");
+                                _cpb[i, j].BackgroundImage = Image.FromFile("../../Resources/_01.png");
                             }
-                            else if (cpb[i, j].Tag.Equals("ThreeHit")&& cpb[i, j].hits==1)
+                            else if (_cpb[i, j].Tag.Equals("ThreeHit")&& _cpb[i, j].hits==1)
                             {
-                                cpb[i, j].BackgroundImage = Image.FromFile("../../Resources/_02.png");
+                                _cpb[i, j].BackgroundImage = Image.FromFile("../../Resources/_02.png");
                             }
-                            else if (cpb[i, j].Tag.Equals("TwoHit"))
+                            else if (_cpb[i, j].Tag.Equals("TwoHit"))
                             {
-                                cpb[i, j].BackgroundImage = Image.FromFile("../../Resources/_61.png");
+                                _cpb[i, j].BackgroundImage = Image.FromFile("../../Resources/_61.png");
                             }
                             GameData.dirY = -GameData.dirY;
                             
@@ -282,7 +281,7 @@ namespace Arkanoid
                 if (GameOver())
                 {
                     tmrSpeed.Stop();
-                    MessageBox.Show("Felicidades, Ganaste.", "Arkanoid message", MessageBoxButtons.OK);
+                    MessageBox.Show("Felicidades, Ganaste score: " + _score, "Arkanoid message",MessageBoxButtons.OK);
                     Dispose();
                     FrmMainMenu gameOver = new FrmMainMenu();
                     gameOver.Show();
@@ -293,7 +292,7 @@ namespace Arkanoid
             {
                 for (int i = 0; i < 4; i++)
                 for (int j = 0; j < 6; j++)
-                    if (cpb[i, j] != null)
+                    if (_cpb[i, j] != null)
                     { 
                         return false;
                     } 
