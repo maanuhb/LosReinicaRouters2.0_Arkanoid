@@ -79,11 +79,9 @@ namespace Arkanoid
             LoadTiles();
             lblScore.Text = _score.ToString();
         }
-<<<<<<< HEAD
-        
-        
 
-=======
+        
+        
         protected override CreateParams CreateParams
         {
             get
@@ -93,7 +91,8 @@ namespace Arkanoid
                 return handleParam;
             }
         }
->>>>>>> 3e4c4ac446ac0d35a9936bd6f5ff1e2f54c84e3a
+
+
         //Llenamos la matriz con los bloques 
         private void LoadTiles()
         {
@@ -205,7 +204,6 @@ namespace Arkanoid
         private void Liveaction()
         {
             tmrSpeed.Stop();
-<<<<<<< HEAD
             --_live;
             
                 if (_live == 2)
@@ -230,7 +228,7 @@ namespace Arkanoid
                     KeyDown += frmGame_KeyDown;
                     LoadBall();
                     tmrSpeed.Start(); 
-=======
+
             --live;
             if (live == 2)
                 heart3.Visible = false;
@@ -252,7 +250,6 @@ namespace Arkanoid
                 KeyDown += frmGame_KeyDown;
                 LoadBall();
                 tmrSpeed.Start(); 
->>>>>>> 3e4c4ac446ac0d35a9936bd6f5ff1e2f54c84e3a
             }
         }
 
@@ -285,16 +282,14 @@ namespace Arkanoid
                     {
                         if (cpb[i, j] != null && ball.Bounds.IntersectsWith(cpb[i, j].Bounds))
                         {
-<<<<<<< HEAD
+
                             //Calculando el score para mostrar
                             _score += (int)(_cpb[i, j].hits * _amountTicks);
                             
                             _cpb[i, j].hits--;
                             if (_cpb[i, j].hits == 0)
-=======
                             cpb[i, j].hits--;
                             if (cpb[i, j].hits == 0)
->>>>>>> 3e4c4ac446ac0d35a9936bd6f5ff1e2f54c84e3a
                             {
                                 Controls.Remove(cpb[i, j]);
                                 cpb[i, j] = null;
