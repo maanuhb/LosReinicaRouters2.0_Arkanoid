@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Arkanoid
@@ -16,6 +9,8 @@ namespace Arkanoid
         private CustomPictureBox[,] _cpb;
         private PictureBox _ball;
         private bool[,] ArrayExist;
+        private int _score = 0;
+        public double _amountTicks = 0;
 
         private int _live = 3;
 
@@ -82,7 +77,10 @@ namespace Arkanoid
             picSpaceShip.Top = (Height - picSpaceShip.Height) - 130;
             LoadBall();
             LoadTiles();
+            lblScore.Text = _score.ToString();
         }
+        
+        
 
         //Llenamos la matriz con los bloques 
         private void LoadTiles()
@@ -124,11 +122,10 @@ namespace Arkanoid
                 }
             }
         }
-        
         private int RandomNumber(ref string number)
         {
             Random rnd = new Random();
-            int newNumber = 0;
+            int newNumber;
             bool diff = true;
             do
             {
@@ -160,21 +157,34 @@ namespace Arkanoid
             _ball.Left = picSpaceShip.Left + (picSpaceShip.Width / 2) - (_ball.Width / 2);
             Controls.Add(_ball);
         }
+        
 
         private void tmrSpeed_Tick(object sender, EventArgs e)
         {
+            //ticks realizados para calcular el score
+            _amountTicks += 0.01;
+            
             if (!GameData.gamestarted)
                 return;
             _ball.Left += GameData.dirX;
             _ball.Top += GameData.dirY;
             Bounceball();
         }
+        
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams handleParam = base.CreateParams;
+                handleParam.ExStyle |= 0x02000000;   // WS_EX_COMPOSITED       
+                return handleParam;
+            }
+        }
 
         private void Liveaction()
         {
             tmrSpeed.Stop();
             --_live;
-
             
                 if (_live == 2)
                     heart3.Visible = false;
@@ -230,6 +240,9 @@ namespace Arkanoid
                     {
                         if (_cpb[i, j] != null && _ball.Bounds.IntersectsWith(_cpb[i, j].Bounds))
                         {
+                            //Calculando el score para mostrar
+                            _score += (int)(_cpb[i, j].hits * _amountTicks);
+                            
                             _cpb[i, j].hits--;
                             if (_cpb[i, j].hits == 0)
                             {
@@ -238,6 +251,9 @@ namespace Arkanoid
                             }
 
                             GameData.dirY = -GameData.dirY;
+                            
+                            //mostrando score
+                            lblScore.Text = _score.ToString();
                             return;
                         }
                     }
