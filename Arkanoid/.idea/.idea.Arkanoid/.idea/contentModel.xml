@@ -1,25 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\usuario\AppData\local\JetBrains\Rider2020.1\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\usuario\AppData\local\JetBrains\Rider2020.1\resharper-host\local\Transient\ReSharperHost\v201\SolutionCaches\_Arkanoid.466934310.00" t="ExcludeRecursive" />
-    <e p="C:\Users\usuario\Documents\LosReinicaRouters2\Arkanoid" t="IncludeRecursive">
+    <e p="C:\Users\PC\.Rider2019.3\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\PC\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_Arkanoid.1562758077.00" t="ExcludeRecursive" />
+    <e p="C:\Users\PC\Desktop\LosReinicaRouters2.0_Arkanoid\Arkanoid" t="IncludeRecursive">
       <e p="App.config" t="Include" />
       <e p="Arkanoid.csproj" t="IncludeRecursive" />
       <e p="Arkanoid.sln" t="IncludeFlat" />
-      <e p="ArkanoidDBcn.cs" t="Include" />
       <e p="bin" t="ExcludeRecursive" />
-      <e p="CustomPictureBox.cs" t="Include" />
-      <e p="frmGame.cs" t="Include" />
-      <e p="frmGame.Designer.cs" t="Include" />
-      <e p="frmGame.resx" t="Include" />
-      <e p="frmMainMenu.cs" t="Include" />
-      <e p="frmMainMenu.Designer.cs" t="Include" />
-      <e p="frmMainMenu.resx" t="Include" />
-      <e p="GameData.cs" t="Include" />
-      <e p="InstructionsUC.cs" t="Include" />
-      <e p="InstructionsUC.Designer.cs" t="Include" />
-      <e p="InstructionsUC.resx" t="Include" />
+      <e p="Controlador" t="Include">
+        <e p="ArkanoidDBcn.cs" t="Include" />
+        <e p="GameData.cs" t="Include" />
+        <e p="PlayerController.cs" t="Include" />
+      </e>
+      <e p="Modelo" t="Include">
+        <e p="CustomPictureBox.cs" t="Include" />
+        <e p="Player.cs" t="Include" />
+      </e>
       <e p="obj" t="ExcludeRecursive" />
       <e p="packages" t="ExcludeRecursive" />
       <e p="packages.config" t="Include" />
@@ -50,9 +47,23 @@
         <e p="MenuBackGround.png" t="Include" />
         <e p="pelota.png" t="Include" />
       </e>
-      <e p="Top10UC.cs" t="Include" />
-      <e p="Top10UC.Designer.cs" t="Include" />
-      <e p="Top10UC.resx" t="Include" />
+      <e p="Vista" t="Include">
+        <e p="frmGame.cs" t="Include" />
+        <e p="frmGame.Designer.cs" t="Include" />
+        <e p="frmGame.resx" t="Include" />
+        <e p="frmMainMenu.cs" t="Include" />
+        <e p="frmMainMenu.Designer.cs" t="Include" />
+        <e p="frmMainMenu.resx" t="Include" />
+        <e p="GetNickname.cs" t="Include" />
+        <e p="GetNickname.Designer.cs" t="Include" />
+        <e p="GetNickname.resx" t="Include" />
+        <e p="InstructionsUC.cs" t="Include" />
+        <e p="InstructionsUC.Designer.cs" t="Include" />
+        <e p="InstructionsUC.resx" t="Include" />
+        <e p="TOP10.cs" t="Include" />
+        <e p="TOP10.Designer.cs" t="Include" />
+        <e p="TOP10.resx" t="Include" />
+      </e>
     </e>
   </component>
 </project>

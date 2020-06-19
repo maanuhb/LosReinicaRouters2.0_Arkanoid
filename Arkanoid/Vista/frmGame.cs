@@ -9,11 +9,9 @@ namespace Arkanoid
         private CustomPictureBox[,] _cpb;
         private PictureBox _ball;
         private bool[,] ArrayExist;
-        private int _score = 0;
-        public double AmountTicks = 0;
         private int _live = 3;
-        
-
+        private GetNickname gn;
+        private Player currentPlayer;
         public FrmGame()
         {
             InitializeComponent();
@@ -69,19 +67,35 @@ namespace Arkanoid
                 }
             }
         }
-
+        
         private void frmGame_Load(object sender, EventArgs e)
         {
+            gn = new GetNickname();
+            gn.Left = Width / 2 - gn.Width/2;
+            gn.Top = Height / 2 - gn.Height / 2;
+            
+            gn.get = (nick) =>
+            {
+                if (PlayerController.CreatePlayer(nick))
+                {
+                    MessageBox.Show($"Bienvenido de nuevo {nick}");
+                }
+                else
+                {
+                    MessageBox.Show($"Gracias por registrarte {nick}");
+                }
+                currentPlayer = new Player(nick, 0);
+            };
+            Controls.Add(gn);
+            
             picSpaceShip.BackgroundImage = Image.FromFile("../../Resources/barra2loop.gif");
             picSpaceShip.BackgroundImageLayout = ImageLayout.Stretch;
             picSpaceShip.Top = (Height - picSpaceShip.Height) - 130;
             LoadBall();
             LoadTiles();
-            lblScore.Text = _score.ToString();
+            lblScore.Text = GameData.score.ToString();
         }
-
         
-
         //Llenamos la matriz con los bloques 
         private void LoadTiles()
         {
@@ -131,6 +145,9 @@ namespace Arkanoid
                 }
             }
         }
+        
+        //Funcion para devolver un numero random y poder llenar las filas de bloques de acuerdo al numero
+        //que nos salga
         private int RandomNumber(ref string number)
         {
             Random rnd = new Random();
@@ -167,11 +184,10 @@ namespace Arkanoid
             Controls.Add(_ball);
         }
         
-
         private void tmrSpeed_Tick(object sender, EventArgs e)
         {
             //ticks realizados para calcular el score
-            AmountTicks += 0.09;
+            GameData.AmaountTicks += 0.09;
             
             if (!GameData.gamestarted)
                 return;
@@ -206,7 +222,7 @@ namespace Arkanoid
             if (_live == 0)
             {
                 heart1.Visible = false;
-                MessageBox.Show("Has perdido, Score final: " + _score, "Arkanoid Message", MessageBoxButtons.OK);
+                MessageBox.Show("Has perdido, Score final: " + GameData.score, "Arkanoid Message", MessageBoxButtons.OK);
                 Dispose();
                 FrmMainMenu GameOver = new FrmMainMenu();
                 GameOver.Show();
@@ -222,24 +238,29 @@ namespace Arkanoid
 
         private void Bounceball()
             {
+                //Si la bola ha caido realizamos el método de Liveaction para ver si solo se le resta una vida o si 
+                //ha perdido ya que no le quedan vidas
                 if (_ball.Bottom > (int) (Height * 0.77) + _ball.Height)
                 {
                     if (_live != 0)
                         Liveaction();
                 }
 
+                //Si choca con la region establecida para el juego hacemos que haga el rebote en x
                 if (_ball.Left < Width * 0.30 || _ball.Right > Width * 0.75)
                 {
                     GameData.dirX = -GameData.dirX;
                     return;
                 }
 
+                //Si choca con la region establecida para el juego hacemos que haga el rebote en y
                 if (_ball.Top < Height - Height * 0.77)
                 {
                     GameData.dirY = -GameData.dirY;
                     return;
                 }
-
+               
+                //Si rebota con la plataforma hacemos que haga el rebote en y
                 if (_ball.Bounds.IntersectsWith(picSpaceShip.Bounds))
                     GameData.dirY = -GameData.dirY;
 
@@ -250,22 +271,29 @@ namespace Arkanoid
                         if (_cpb[i, j] != null && _ball.Bounds.IntersectsWith(_cpb[i, j].Bounds))
                         {
                             //Calculando el score para mostrar
-                            _score += (int)(_cpb[i, j].hits * AmountTicks);
-                            
+                            GameData.score += (int)(_cpb[i, j].hits * GameData.AmaountTicks);
                             _cpb[i, j].hits--;
+                            
+                            //Si el numero de hits del bloque es cero y la bola los golpea lo quitamos
                             if (_cpb[i, j].hits == 0)
                             {
                                 Controls.Remove(_cpb[i, j]);
                                 _cpb[i, j] = null;
                             }
+                            //Si el numero de hits del bloque es 3 y la bola los golpea se le cambia el sprite
+                            //del bloque
                             else if (_cpb[i, j].Tag.Equals("ThreeHit")&& _cpb[i, j].hits==2)
                             {
                                 _cpb[i, j].BackgroundImage = Image.FromFile("../../Resources/_01.png");
                             }
+                            //Si el numero de hits del bloque es 3 y la bola los golpea se le cambia el sprite
+                            //del bloque
                             else if (_cpb[i, j].Tag.Equals("ThreeHit")&& _cpb[i, j].hits==1)
                             {
                                 _cpb[i, j].BackgroundImage = Image.FromFile("../../Resources/_02.png");
                             }
+                            //Si el numero de hits del bloque es 2 y la bola los golpea se le cambia el sprite
+                            //del bloque
                             else if (_cpb[i, j].Tag.Equals("TwoHit"))
                             {
                                 _cpb[i, j].BackgroundImage = Image.FromFile("../../Resources/_61.png");
@@ -273,7 +301,7 @@ namespace Arkanoid
                             GameData.dirY = -GameData.dirY;
                             
                             //mostrando score
-                            lblScore.Text = _score.ToString();
+                            lblScore.Text = GameData.score.ToString();
                             return;
                         }
                     }
@@ -281,15 +309,13 @@ namespace Arkanoid
                 if (GameOver())
                 {
                     tmrSpeed.Stop();
-                    MessageBox.Show("Felicidades, Ganaste score: " + _score, "Arkanoid message",MessageBoxButtons.OK);
-                    Dispose();
-                    FrmMainMenu gameOver = new FrmMainMenu();
-                    gameOver.Show();
+                    PlayerController.CreateScore(currentPlayer.idPlayer, GameData.score);
                 }
             }
-
-            private bool GameOver()
+        
+        private bool GameOver()
             {
+                //Comprobamos si la matriz de bloques esta vacia para saber si el jugador gano
                 for (int i = 0; i < 4; i++)
                 for (int j = 0; j < 6; j++)
                     if (_cpb[i, j] != null)

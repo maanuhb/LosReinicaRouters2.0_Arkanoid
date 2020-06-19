@@ -1,4 +1,6 @@
-﻿namespace Arkanoid
+﻿using System.ComponentModel;
+
+namespace Arkanoid
 {
     partial class FrmGame
     {
