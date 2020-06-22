@@ -117,7 +117,6 @@ C:\Users\13-V001LA\Desktop\proyecto\LosReinicaRouters2.0_Arkanoid\Arkanoid\bin\D
 C:\Users\13-V001LA\Desktop\proyecto\LosReinicaRouters2.0_Arkanoid\Arkanoid\obj\Debug\Arkanoid.exe.config
 C:\Users\13-V001LA\Desktop\proyecto\LosReinicaRouters2.0_Arkanoid\Arkanoid\obj\Debug\Arkanoid.InstructionsUC.resources
 C:\Users\13-V001LA\Desktop\proyecto\LosReinicaRouters2.0_Arkanoid\Arkanoid\obj\Debug\Arkanoid.csproj.CopyComplete
-C:\Users\usuario\Documents\LosReinicaRouters2\Arkanoid\obj\Debug\Arkanoid.Top10UC.resources
 C:\Users\13-V001LA\Desktop\d\LosReinicaRouters2.0_Arkanoid\Arkanoid\bin\Debug\Arkanoid.exe.config
 C:\Users\13-V001LA\Desktop\d\LosReinicaRouters2.0_Arkanoid\Arkanoid\bin\Debug\Arkanoid.pdb
 C:\Users\13-V001LA\Desktop\d\LosReinicaRouters2.0_Arkanoid\Arkanoid\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
@@ -179,3 +178,5 @@ C:\Users\PC\Desktop\LosReinicaRouters2.0_Arkanoid\Arkanoid\obj\Debug\Arkanoid.cs
 C:\Users\13-V001LA\Desktop\d\LosReinicaRouters2.0_Arkanoid\Arkanoid\obj\Debug\Arkanoid.Top10UC.resources
 C:\Users\PC\Desktop\LosReinicaRouters2.0_Arkanoid\Arkanoid\obj\Debug\Arkanoid.TOP10.resources
 C:\Users\PC\Desktop\LosReinicaRouters2.0_Arkanoid\Arkanoid\obj\Debug\Arkanoid.GetNickname.resources
+C:\Users\usuario\Documents\LosReinicaRouters2\Arkanoid\obj\Debug\Arkanoid.GetNickname.resources
+C:\Users\usuario\Documents\LosReinicaRouters2\Arkanoid\obj\Debug\Arkanoid.TOP10.resources

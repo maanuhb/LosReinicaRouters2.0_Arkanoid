@@ -67,12 +67,24 @@ namespace Arkanoid
                 }
             }
         }
+            
+        //obteniendo el ID del jugador
+        private void GettingScore()
+        {
+            var query = ArkanoidDBcn.ExecuteQuery("select idplayer from player " +
+                                                  $" where nickname = {currentPlayer.Nickname}");
+            var query2 = query.Rows[0];
+            var id = Convert.ToInt32(query2.ToString());
+
+            ArkanoidDBcn.ExecuteNonquery("INSERT INTO SCORE(idPlayer,score) VALUES " +
+                                         $"('{id}','{currentPlayer.Score}')");
+        }
         
         private void frmGame_Load(object sender, EventArgs e)
         {
             gn = new GetNickname();
-            gn.Left = Width / 2 - gn.Width/2;
-            gn.Top = Height / 2 - gn.Height / 2;
+            gn.Left = Width / 2 - gn.Width / 2;
+            gn.Top = Height /  2 - gn.Height / 2;
             
             gn.get = (nick) =>
             {
@@ -85,9 +97,10 @@ namespace Arkanoid
                     MessageBox.Show($"Gracias por registrarte {nick}");
                 }
                 currentPlayer = new Player(nick, 0);
+                
             };
             Controls.Add(gn);
-            
+            gn.BringToFront();
             picSpaceShip.BackgroundImage = Image.FromFile("../../Resources/barra2loop.gif");
             picSpaceShip.BackgroundImageLayout = ImageLayout.Stretch;
             picSpaceShip.Top = (Height - picSpaceShip.Height) - 130;
@@ -222,7 +235,7 @@ namespace Arkanoid
             if (_live == 0)
             {
                 heart1.Visible = false;
-                MessageBox.Show("Has perdido, Score final: " + GameData.score, "Arkanoid Message", MessageBoxButtons.OK);
+                MessageBox.Show("Has perdido, Score final: " + GameData.score , "Arkanoid Message", MessageBoxButtons.OK);
                 Dispose();
                 FrmMainMenu GameOver = new FrmMainMenu();
                 GameOver.Show();
@@ -309,7 +322,7 @@ namespace Arkanoid
                 if (GameOver())
                 {
                     tmrSpeed.Stop();
-                    PlayerController.CreateScore(currentPlayer.idPlayer, GameData.score);
+                    GettingScore();
                 }
             }
         

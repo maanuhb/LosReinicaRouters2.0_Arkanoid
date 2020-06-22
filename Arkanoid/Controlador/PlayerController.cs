@@ -19,11 +19,13 @@ namespace Arkanoid
                 return false;
             }
         }
-        public static void CreateScore(int idPlayer, int score)
+        
+      /*  public static void CreateScore(int idPlayer, int score)
         {
-            ArkanoidDBcn.ExecuteNonquery("INSERT INTO SCORE(idPlayer, score) VALUES " +
-                                         $"({idPlayer}), ({score})");
-        }
+            ArkanoidDBcn.ExecuteNonquery("INSERT INTO SCORE(idPlayer,score) VALUES " +
+                                         $"('{idPlayer}','{score}')");
+        }*/
+        
         public static List<Player> ObtainTopPlayers() 
         {
             var TopPlayers = new List<Player>();
