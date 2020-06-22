@@ -11,7 +11,7 @@ namespace Arkanoid
         private bool[,] ArrayExist;
         private int _live = 3;
         private GetNickname gn;
-        private Player currentPlayer;
+        
         public FrmGame()
         {
             InitializeComponent();
@@ -71,6 +71,7 @@ namespace Arkanoid
         //obteniendo el ID del jugador
         private void GettingScore()
         {
+<<<<<<< HEAD
             try
             {
                 var query = ArkanoidDBcn.ExecuteQuery("select idplayer from player " +
@@ -86,6 +87,23 @@ namespace Arkanoid
             catch (Exception e)
             {
                 MessageBox.Show("No se agrego Score.");
+=======
+            string query = $"SELECT idPlayer FROM PLAYER WHERE nickname = '{gn.currentPlayer.Nickname}'";
+
+            var dt = ArkanoidDBcn.ExecuteQuery(query);
+            var dr = dt.Rows[0];
+            var idPlayer = Convert.ToInt32(dr[0].ToString());
+
+            ArkanoidDBcn.ExecuteNonquery("INSERT INTO SCORE(idPlayer,score) VALUES " +
+                                         $"({idPlayer},{GameData.score})");
+
+            if(MessageBox.Show($"Su puntuación de {GameData.score}, se ha registrado correctamente",
+                "Arkanoid message", MessageBoxButtons.OK) == DialogResult.OK)
+            {
+                FrmMainMenu menu = new FrmMainMenu();
+                menu.Show();
+                Dispose();
+>>>>>>> dae896fc3cecc6a0ff78983b4483a89ae8481fb8
             }
         }
         
@@ -105,11 +123,10 @@ namespace Arkanoid
                 {
                     MessageBox.Show($"Gracias por registrarte {nick}");
                 }
-                currentPlayer = new Player(nick, 0);
-                
             };
             Controls.Add(gn);
             gn.BringToFront();
+            
             picSpaceShip.BackgroundImage = Image.FromFile("../../Resources/barra2loop.gif");
             picSpaceShip.BackgroundImageLayout = ImageLayout.Stretch;
             picSpaceShip.Top = (Height - picSpaceShip.Height) - 130;
@@ -244,7 +261,8 @@ namespace Arkanoid
             if (_live == 0)
             {
                 heart1.Visible = false;
-                MessageBox.Show("Has perdido, Score final: " + GameData.score , "Arkanoid Message", MessageBoxButtons.OK);
+                MessageBox.Show("Has perdido, Score final: " + GameData.score , "Arkanoid Message", 
+                    MessageBoxButtons.OK);
                 Dispose();
                 FrmMainMenu GameOver = new FrmMainMenu();
                 GameOver.Show();
@@ -345,6 +363,18 @@ namespace Arkanoid
                         return false;
                     } 
                 return true;
+        }
+
+        private void FrmGame_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            
+            if (MessageBox.Show("Estas seguro que deseas salir al menú ?", "Arkanoid Message", MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                FrmMainMenu menu = new FrmMainMenu();
+                menu.Show();
+                Dispose();
+            }
         }
     }
 }

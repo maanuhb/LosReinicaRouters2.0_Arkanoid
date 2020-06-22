@@ -8,6 +8,7 @@ namespace Arkanoid
     {
         public delegate void Getnickname(string text);
         public Getnickname get;
+        public Player currentPlayer;
         
         
         public GetNickname()
@@ -16,6 +17,7 @@ namespace Arkanoid
         }
         private void btnOk_Click_1(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             try
             {
                 switch (txtNickname.Text)
@@ -37,6 +39,12 @@ namespace Arkanoid
             {
                 MessageBox.Show(ex.Message);
             }
+=======
+            if(txtNickname.Text.Length != 0)
+                currentPlayer = new Player(txtNickname.Text, 0);
+                get?.Invoke(txtNickname.Text);
+            Dispose();
+>>>>>>> dae896fc3cecc6a0ff78983b4483a89ae8481fb8
         }
         
         
