@@ -32,8 +32,7 @@ namespace Arkanoid
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources =
-                new System.ComponentModel.ComponentResourceManager(typeof(FrmGame));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmGame));
             this.picSpaceShip = new System.Windows.Forms.PictureBox();
             this.tmrSpeed = new System.Windows.Forms.Timer(this.components);
             this.label1 = new System.Windows.Forms.Label();
@@ -64,8 +63,7 @@ namespace Arkanoid
             // label1
             // 
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold,
-                System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label1.Location = new System.Drawing.Point(1, 18);
             this.label1.Name = "label1";
@@ -76,8 +74,7 @@ namespace Arkanoid
             // heart1
             // 
             this.heart1.BackColor = System.Drawing.Color.Transparent;
-            this.heart1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold,
-                System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.heart1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.heart1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.heart1.Image = ((System.Drawing.Image) (resources.GetObject("heart1.Image")));
             this.heart1.Location = new System.Drawing.Point(95, 9);
@@ -88,8 +85,7 @@ namespace Arkanoid
             // heart2
             // 
             this.heart2.BackColor = System.Drawing.Color.Transparent;
-            this.heart2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold,
-                System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.heart2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.heart2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.heart2.Image = ((System.Drawing.Image) (resources.GetObject("heart2.Image")));
             this.heart2.Location = new System.Drawing.Point(146, 9);
@@ -100,8 +96,7 @@ namespace Arkanoid
             // heart3
             // 
             this.heart3.BackColor = System.Drawing.Color.Transparent;
-            this.heart3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold,
-                System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.heart3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.heart3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.heart3.Image = ((System.Drawing.Image) (resources.GetObject("heart3.Image")));
             this.heart3.Location = new System.Drawing.Point(197, 9);
@@ -112,8 +107,7 @@ namespace Arkanoid
             // label2
             // 
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold,
-                System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label2.Location = new System.Drawing.Point(1042, 9);
             this.label2.Name = "label2";
@@ -124,8 +118,7 @@ namespace Arkanoid
             // lblScore
             // 
             this.lblScore.BackColor = System.Drawing.Color.Transparent;
-            this.lblScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold,
-                System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.lblScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.lblScore.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblScore.Location = new System.Drawing.Point(1176, 9);
             this.lblScore.Name = "lblScore";
@@ -149,6 +142,7 @@ namespace Arkanoid
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FrmGame";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Arkanoid Game ";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmGame_FormClosing);
             this.Load += new System.EventHandler(this.frmGame_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmGame_KeyDown);
