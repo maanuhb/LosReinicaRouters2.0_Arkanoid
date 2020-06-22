@@ -97,6 +97,10 @@
 
         <Compile Include="Modelo\CustomPictureBox.cs" />
 
+        <Compile Include="Modelo\EmptyNicknameException.cs" />
+
+        <Compile Include="Modelo\ExceedMaxCharException.cs" />
+
         <Compile Include="Modelo\Player.cs" />
 
         <Compile Include="Program.cs" />

@@ -9,16 +9,37 @@ namespace Arkanoid
         public delegate void Getnickname(string text);
         public Getnickname get;
         
+        
         public GetNickname()
         {
             InitializeComponent();
         }
         private void btnOk_Click_1(object sender, EventArgs e)
         {
-            if(txtNickname.Text.Length != 0)
-                get?.Invoke(txtNickname.Text);
-            Dispose();
+            try
+            {
+                switch (txtNickname.Text)
+                {
+                    case string aux when aux.Length > 15:
+                        throw new ExceedMaxCharException("No puede excederse de 15 caracteres");
+                    case string aux when aux.Trim().Length == 0:
+                        throw new EmptyNicknameException("Ingrese usuario porfavor");
+                    default:
+                        get?.Invoke(txtNickname.Text);
+                        break;
+                }
+            }
+            catch(EmptyNicknameException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            catch(ExceedMaxCharException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
+        
+        
         private void btnOk_MouseHover_1(object sender, EventArgs e)
         {
             btnOk.BackColor = btnOk.BackColor == Color.MediumBlue ?

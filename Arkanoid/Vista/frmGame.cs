@@ -71,13 +71,22 @@ namespace Arkanoid
         //obteniendo el ID del jugador
         private void GettingScore()
         {
-            var query = ArkanoidDBcn.ExecuteQuery("select idplayer from player " +
-                                                  $" where nickname = {currentPlayer.Nickname}");
-            var query2 = query.Rows[0];
-            var id = Convert.ToInt32(query2.ToString());
+            try
+            {
+                var query = ArkanoidDBcn.ExecuteQuery("select idplayer from player " +
+                                                      $"where nickname = '{currentPlayer.Nickname}'");
+                var query2 = query.Rows[0];
+                var id = Convert.ToInt32(query2.ToString());
 
-            ArkanoidDBcn.ExecuteNonquery("INSERT INTO SCORE(idPlayer,score) VALUES " +
-                                         $"('{id}','{currentPlayer.Score}')");
+                string query3 = ("INSERT INTO SCORE(idplayer,score) VALUES " +
+                                             $"('{id}','{currentPlayer.Score}')");
+                
+                ArkanoidDBcn.ExecuteNonquery(query3);
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("No se agrego Score.");
+            }
         }
         
         private void frmGame_Load(object sender, EventArgs e)

@@ -15,6 +15,8 @@
       </e>
       <e p="Modelo" t="Include">
         <e p="CustomPictureBox.cs" t="Include" />
+        <e p="EmptyNicknameException.cs" t="Include" />
+        <e p="ExceedMaxCharException.cs" t="Include" />
         <e p="Player.cs" t="Include" />
       </e>
       <e p="obj" t="ExcludeRecursive" />
