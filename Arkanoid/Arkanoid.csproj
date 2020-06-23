@@ -101,7 +101,7 @@
 
         <Compile Include="Modelo\ExceedMaxCharException.cs" />
 
-        <Compile Include="Modelo\NoRemainingLifesException.cs" />
+        <Compile Include="Modelo\NoRemainingLifeException.cs" />
 
         <Compile Include="Modelo\OutOfBordersException.cs" />
 
@@ -123,11 +123,11 @@
         <Compile Include="Vista\frmMainMenu.Designer.cs">
           <DependentUpon>frmMainMenu.cs</DependentUpon>
         </Compile>
-        <Compile Include="Vista\GetNickname.cs">
+        <Compile Include="Vista\GetNicknameUC.cs">
           <SubType>UserControl</SubType>
         </Compile>
-        <Compile Include="Vista\GetNickname.Designer.cs">
-          <DependentUpon>GetNickname.cs</DependentUpon>
+        <Compile Include="Vista\GetNicknameUC.Designer.cs">
+          <DependentUpon>GetNicknameUC.cs</DependentUpon>
         </Compile>
         <Compile Include="Vista\InstructionsUC.cs">
           <SubType>UserControl</SubType>
@@ -135,11 +135,11 @@
         <Compile Include="Vista\InstructionsUC.Designer.cs">
           <DependentUpon>InstructionsUC.cs</DependentUpon>
         </Compile>
-        <Compile Include="Vista\TOP10.cs">
+        <Compile Include="Vista\frmTOP10.cs">
           <SubType>Form</SubType>
         </Compile>
-        <Compile Include="Vista\TOP10.Designer.cs">
-          <DependentUpon>TOP10.cs</DependentUpon>
+        <Compile Include="Vista\frmTOP10.Designer.cs">
+          <DependentUpon>frmTOP10.cs</DependentUpon>
         </Compile>
         <EmbeddedResource Include="Properties\Resources.resx">
             <Generator>ResXFileCodeGenerator</Generator>
@@ -156,14 +156,14 @@
         <EmbeddedResource Include="Vista\frmMainMenu.resx">
           <DependentUpon>frmMainMenu.cs</DependentUpon>
         </EmbeddedResource>
-        <EmbeddedResource Include="Vista\GetNickname.resx">
-          <DependentUpon>GetNickname.cs</DependentUpon>
+        <EmbeddedResource Include="Vista\GetNicknameUC.resx">
+          <DependentUpon>GetNicknameUC.cs</DependentUpon>
         </EmbeddedResource>
         <EmbeddedResource Include="Vista\InstructionsUC.resx">
           <DependentUpon>InstructionsUC.cs</DependentUpon>
         </EmbeddedResource>
-        <EmbeddedResource Include="Vista\TOP10.resx">
-          <DependentUpon>TOP10.cs</DependentUpon>
+        <EmbeddedResource Include="Vista\frmTOP10.resx">
+          <DependentUpon>frmTOP10.cs</DependentUpon>
         </EmbeddedResource>
         <None Include="packages.config" />
         <None Include="Properties\Settings.settings">

@@ -11,15 +11,6 @@ namespace Arkanoid
             InitializeComponent();
             instructionsUC1.Visible = false;
         }
-        protected override CreateParams CreateParams
-        {
-            get
-            {
-                CreateParams handleParam = base.CreateParams;
-                handleParam.ExStyle |= 0x02000000;   // WS_EX_COMPOSITED       
-                return handleParam;
-            }
-        }
         private void btnPlay_Click(object sender, EventArgs e)
         {
             FrmGame playGame = new FrmGame();

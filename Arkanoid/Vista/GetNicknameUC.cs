@@ -7,8 +7,8 @@ namespace Arkanoid
     public partial class GetNickname : UserControl
     {
         public delegate void Getnickname(string text);
-        public Getnickname get;
-        public Player currentPlayer;
+        public Getnickname Get;
+        public Player CurrentPlayer;
         
         
         public GetNickname()
@@ -29,8 +29,8 @@ namespace Arkanoid
                     default:
                         if(txtNickname.Text.Length != 0)
                             
-                            currentPlayer = new Player(txtNickname.Text, 0);
-                        get?.Invoke(txtNickname.Text); 
+                            CurrentPlayer = new Player(txtNickname.Text, 0);
+                        Get?.Invoke(txtNickname.Text); 
                         Dispose();
                         break;
                 }

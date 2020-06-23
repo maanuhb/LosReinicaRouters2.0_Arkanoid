@@ -31,8 +31,7 @@ namespace Arkanoid
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources =
-                new System.ComponentModel.ComponentResourceManager(typeof(TOP10));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TOP10));
             this.btnMenu = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -40,12 +39,11 @@ namespace Arkanoid
             // btnMenu
             // 
             this.btnMenu.BackColor = System.Drawing.Color.MediumBlue;
-            this.btnMenu.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular,
-                System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.btnMenu.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.btnMenu.ForeColor = System.Drawing.Color.White;
-            this.btnMenu.Location = new System.Drawing.Point(122, 691);
+            this.btnMenu.Location = new System.Drawing.Point(105, 599);
             this.btnMenu.Name = "btnMenu";
-            this.btnMenu.Size = new System.Drawing.Size(288, 61);
+            this.btnMenu.Size = new System.Drawing.Size(247, 53);
             this.btnMenu.TabIndex = 0;
             this.btnMenu.Text = "Regresar al menú";
             this.btnMenu.UseVisualStyleBackColor = false;
@@ -56,22 +54,21 @@ namespace Arkanoid
             // label1
             // 
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular,
-                System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(136, 18);
+            this.label1.Location = new System.Drawing.Point(117, 16);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(215, 84);
+            this.label1.Size = new System.Drawing.Size(184, 73);
             this.label1.TabIndex = 1;
             this.label1.Text = "TOP 10";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // TOP10
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image) (resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(524, 764);
+            this.ClientSize = new System.Drawing.Size(449, 662);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnMenu);
             this.Icon = ((System.Drawing.Icon) (resources.GetObject("$this.Icon")));
@@ -83,9 +80,9 @@ namespace Arkanoid
             this.ResumeLayout(false);
         }
 
-        #endregion
-
         private System.Windows.Forms.Button btnMenu;
         private System.Windows.Forms.Label label1;
+
+        #endregion
     }
 }

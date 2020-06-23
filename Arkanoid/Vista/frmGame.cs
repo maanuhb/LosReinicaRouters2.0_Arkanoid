@@ -8,9 +8,9 @@ namespace Arkanoid
     {
         private CustomPictureBox[,] _cpb;
         private PictureBox _ball;
-        private bool[,] ArrayExist;
+        private bool[,] _arrayExist;
         private int _live = 3;
-        private GetNickname gn;
+        private GetNickname _gn;
 
         public FrmGame()
         {
@@ -85,7 +85,7 @@ namespace Arkanoid
         //obteniendo el ID del jugador
         private void GettingScore()
         {
-            string query = $"SELECT idPlayer FROM PLAYER WHERE nickname = '{gn.currentPlayer.Nickname}'";
+            string query = $"SELECT idPlayer FROM PLAYER WHERE nickname = '{_gn.CurrentPlayer.Nickname}'";
 
                 var dt = ArkanoidDBcn.ExecuteQuery(query);
                 var dr = dt.Rows[0];
@@ -109,13 +109,13 @@ namespace Arkanoid
         {
             //Setting 0 to score and ticks for a new game
             GameData.score = 0;
-            GameData.AmaountTicks = 0;
+            GameData.AmountTicks = 0;
             
-            gn = new GetNickname();
-                gn.Left = Width / 2 - gn.Width / 2;
-                gn.Top = Height / 2 - gn.Height / 2;
+            _gn = new GetNickname();
+                _gn.Left = Width / 2 - _gn.Width / 2;
+                _gn.Top = Height / 2 - _gn.Height / 2;
 
-                gn.get = (nick) =>
+                _gn.Get = (nick) =>
                 {
                     if (PlayerController.CreatePlayer(nick))
                     {
@@ -126,8 +126,8 @@ namespace Arkanoid
                         MessageBox.Show($"Gracias por registrarte {nick}");
                     }
                 };
-                Controls.Add(gn);
-                gn.BringToFront();
+                Controls.Add(_gn);
+                _gn.BringToFront();
 
                 picSpaceShip.BackgroundImage = Image.FromFile("../../Resources/barra2loop.gif");
                 picSpaceShip.BackgroundImageLayout = ImageLayout.Stretch;
@@ -231,7 +231,7 @@ namespace Arkanoid
             private void tmrSpeed_Tick(object sender, EventArgs e)
             {
                 //ticks realizados para calcular el score
-                GameData.AmaountTicks += 0.09;
+                GameData.AmountTicks += 0.09;
 
                 if (!GameData.gamestarted)
                     return;
@@ -274,7 +274,7 @@ namespace Arkanoid
                     Dispose();
                     FrmMainMenu GameOver = new FrmMainMenu();
                     GameOver.Show();
-                    throw new NoRemainingLifesException("");
+                    throw new NoRemainingLifeException("");
                 }
                 else
                 {
@@ -327,7 +327,7 @@ namespace Arkanoid
                     if (_cpb[i, j] != null && _ball.Bounds.IntersectsWith(_cpb[i, j].Bounds))
                     {
                         //Calculando el score para mostrar
-                        GameData.score += (int) (_cpb[i, j].hits * GameData.AmaountTicks);
+                        GameData.score += (int) (_cpb[i, j].hits * GameData.AmountTicks);
                         _cpb[i, j].hits--;
 
                         //Si el numero de hits del bloque es cero y la bola los golpea lo quitamos
