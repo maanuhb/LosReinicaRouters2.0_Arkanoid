@@ -35,6 +35,7 @@ namespace Arkanoid
                 {
                     switch (e.KeyCode)
                     {
+                        // Al presionar la tecla "espacio", el juego dara inicio.
                         case Keys.Space:
                             GameData.gamestarted = true;
                             tmrSpeed.Start();
@@ -103,8 +104,7 @@ namespace Arkanoid
 
             }
         }
-        
-
+        // Cuando la ventana se carga, se ejecutará esta función.
         private void frmGame_Load(object sender, EventArgs e)
         {
             //Setting 0 to score and ticks for a new game
@@ -117,10 +117,13 @@ namespace Arkanoid
 
                 _gn.Get = (nick) =>
                 {
+                    // Si el usuario que se ingreso es uno que ya se encuentra guardado en la base,
+                    // se mostrara este mensaje.
                     if (PlayerController.CreatePlayer(nick))
                     {
                         MessageBox.Show($"Bienvenido de nuevo {nick}");
                     }
+                    // Si no, se mostrará un mensaje de registro.
                     else
                     {
                         MessageBox.Show($"Gracias por registrarte {nick}");
@@ -128,7 +131,7 @@ namespace Arkanoid
                 };
                 Controls.Add(_gn);
                 _gn.BringToFront();
-
+                // Se le asigna la imagen a la nave, su tamaño y la posición de la misma.
                 picSpaceShip.BackgroundImage = Image.FromFile("../../Resources/barra2loop.gif");
                 picSpaceShip.BackgroundImageLayout = ImageLayout.Stretch;
                 picSpaceShip.Top = (Height - picSpaceShip.Height) - 130;
@@ -142,7 +145,7 @@ namespace Arkanoid
             {
                 int xAxis = 6;
                 int yAxis = 4;
-                //aqui reducimos el tamaño de los bloques para que pueda encajar en el espacio asignado del juego
+                // Aqui reducimos el tamaño de los bloques para que pueda encajar en el espacio asignado del juego
                 int pbHeight = (int) (Height * 0.3) / yAxis;
                 int pbWidth = (int) (Width / 2.15) / xAxis;
                 string number = "7";
@@ -150,22 +153,29 @@ namespace Arkanoid
                 _cpb = new CustomPictureBox[yAxis, xAxis];
                 for (int i = 0; i < yAxis; i++)
                 {
+                    // Aqui se manda a llamar la función RandomNumber para poder realizar la distribución de bloques
+                    // por cada fila.
                     block = RandomNumber(ref number);
                     number += block;
                     for (int j = 0; j < xAxis; j++)
                     {
                         _cpb[i, j] = new CustomPictureBox();
-
+                        // Si el bloque es igual al bloque numero 0, tendra un total de 3 golpes para ser destruido,
+                        // y tendra el nombre clave: ThreeHit.
                         if (block == 0)
                         {
                             _cpb[i, j].hits = 3;
                             _cpb[i, j].Tag = "ThreeHit";
                         }
+                        // Si el bloque es igual al bloque numero 6, tendra un total de 2 golpes para ser destruido,
+                        // y tendra el nombre clave: TwoHit.
                         else if (block == 6)
                         {
                             _cpb[i, j].hits = 2;
                             _cpb[i, j].Tag = "TwoHit";
                         }
+                        // Si el bloque es igual a un número dentro del rango 1-5,
+                        // solo tendra un golpe para ser destruido, y tendra el nombre clave: OneHit.
                         else
                         {
                             _cpb[i, j].hits = 1;
@@ -187,7 +197,7 @@ namespace Arkanoid
                 }
             }
 
-            //Funcion para devolver un numero random y poder llenar las filas de bloques de acuerdo al numero
+            //Funcion para devolver un numero al azar y poder llenar las filas de bloques de acuerdo al numero
             //que nos salga
             private int RandomNumber(ref string number)
             {
@@ -215,7 +225,7 @@ namespace Arkanoid
 
                 return newNumber;
             }
-
+            // En esta función se carga el modelo de la pelota, su altura, posición y su respectivo sprite.
             private void LoadBall()
             {
                 _ball = new PictureBox();
@@ -247,7 +257,7 @@ namespace Arkanoid
                     throw;
                 }
             }
-
+        // Esta funcion sirve para redibujar el fondo, para que no se tenga ningun error visual
         protected override CreateParams CreateParams
         {
             get
@@ -257,12 +267,11 @@ namespace Arkanoid
                 return handleParam;
             }
         }
-
+        // Esta función es utilizada para la dinámica de las vidas.
         private void Liveaction()
         {
             try
             {
-
                 tmrSpeed.Stop();
                 --_live;
 
@@ -296,10 +305,8 @@ namespace Arkanoid
             {
                 Console.WriteLine(e.Message);
             }
-            
         }
-    
-
+        // Esta función sirve para realizar las fisicas de la pelota.
         private void Bounceball()
         {
             //Si la bola ha caido realizamos el método de Liveaction para ver si solo se le resta una vida o si 
@@ -391,7 +398,7 @@ namespace Arkanoid
 
             return true;
         }
-
+        // Al presionar la X en la ventana, mostrará el mensaje en cuestión, y devolvera al usuario al menú principal.
         private void FrmGame_FormClosing(object sender, FormClosingEventArgs e)
         {
 

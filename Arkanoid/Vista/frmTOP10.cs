@@ -66,10 +66,10 @@ namespace Arkanoid
                 }
             }
         }
+        //  Al presionar este botón, el usuario regresará al menú principal.
         private void btnMenu_Click(object sender, EventArgs e)
         {
-            
-                FrmMainMenu Menu = new FrmMainMenu();
+            FrmMainMenu Menu = new FrmMainMenu();
                 Menu.Show();
                 Hide();
         }
