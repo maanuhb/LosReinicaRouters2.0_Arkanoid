@@ -235,9 +235,17 @@ namespace Arkanoid
 
                 if (!GameData.gamestarted)
                     return;
-                _ball.Left += GameData.dirX;
-                _ball.Top += GameData.dirY;
-                Bounceball();
+                try
+                {
+                    _ball.Left += GameData.dirX;
+                    _ball.Top += GameData.dirY;
+                    Bounceball();
+                }
+                catch (OutOfBordersException exception)
+                {
+                    Console.WriteLine(exception);
+                    throw;
+                }
             }
 
         protected override CreateParams CreateParams
