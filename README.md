@@ -21,13 +21,13 @@ Para salir del juego, debera presionar el botón **Exit** en el menú principal,
 + **¿Dondé puedo ver mi puntaje?**
 Para poder ver tu puntaje, al finalizar cada juego, se te notificara tu puntaje final, si se ha logrado completar el nivel, se guardara el puntaje, y si es lo suficientemente bueno, se mostrara en el aparto **Top 10** en el que se lograra visualizar los mejores 10 resultados.
 
-**¿Cuáles son las teclas del juego?**
++ **¿Cuáles son las teclas del juego?**
 Las teclas utilizadas en el juego son las siguientes:
     +Para mover a la nave del jugador, podra utilizar las flechas *Izquierda* y *Derecha*.
     +Para dar inicio al juego, se debera presionar la tecla *Barra espaciadora*, al pulsar la tecla en cuestión, se pondrá en moviento 
      la pelota, dando inicio al juego.
     
-**¿Qué pasá si pierdo una vida?**
++ **¿Qué pasá si pierdo una vida?**
 Si el jugador llega a perder una vida, la pelota se reiniciara y volvera a su posición original, junto al jugador, debera presionar la *Barra espaciadora* para volver al juego, cada jugador dispone de **3 vidas** por lo que si se llega a perder la ultima vida, se acabará el juego, mostrando un game over.
 
 
