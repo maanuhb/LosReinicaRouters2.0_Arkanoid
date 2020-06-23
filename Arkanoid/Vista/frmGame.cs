@@ -29,12 +29,26 @@ namespace Arkanoid
         //Movimiento de la plataforma con teclado
         private void frmGame_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Space)
+            try
             {
-                GameData.gamestarted = true;
-                tmrSpeed.Start();
+                if (!GameData.gamestarted)
+                {
+                    switch (e.KeyCode)
+                    {
+                        case Keys.Space:
+                            GameData.gamestarted = true;
+                            tmrSpeed.Start();
+                            break;
+                        default:
+                            throw new WrongKeyPressedException("Presione la Barra espaciadora para iniciar");
+                    }
+                }
             }
-
+            catch (WrongKeyPressedException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            
             if (!GameData.gamestarted)
             {
                 switch (e.KeyCode)
@@ -92,8 +106,12 @@ namespace Arkanoid
         
 
         private void frmGame_Load(object sender, EventArgs e)
-            {
-                gn = new GetNickname();
+        {
+            //Setting 0 to score and ticks for a new game
+            GameData.score = 0;
+            GameData.AmaountTicks = 0;
+            
+            gn = new GetNickname();
                 gn.Left = Width / 2 - gn.Width / 2;
                 gn.Top = Height / 2 - gn.Height / 2;
 
@@ -234,34 +252,45 @@ namespace Arkanoid
 
         private void Liveaction()
         {
-            tmrSpeed.Stop();
-            --_live;
-
-            if (_live == 2)
-                heart3.Visible = false;
-            if (_live == 1)
-                heart2.Visible = false;
-
-            GameData.gamestarted = false;
-            _ball.Hide();
-
-            if (_live == 0)
+            try
             {
-                heart1.Visible = false;
-                MessageBox.Show("Has perdido, Score final: " + GameData.score, "Arkanoid Message",
-                    MessageBoxButtons.OK);
-                Dispose();
-                FrmMainMenu GameOver = new FrmMainMenu();
-                GameOver.Show();
+
+                tmrSpeed.Stop();
+                --_live;
+
+                if (_live == 2)
+                    heart3.Visible = false;
+                if (_live == 1)
+                    heart2.Visible = false;
+
+                GameData.gamestarted = false;
+                _ball.Hide();
+
+                if (_live == 0)
+                {
+                    heart1.Visible = false;
+                    MessageBox.Show("Has perdido, Score final: " + GameData.score, "Arkanoid Message",
+                        MessageBoxButtons.OK);
+                    Dispose();
+                    FrmMainMenu GameOver = new FrmMainMenu();
+                    GameOver.Show();
+                    throw new NoRemainingLifesException("");
+                }
+                else
+                {
+                    MessageBox.Show("Has perdido una vida, re manco", "Arkanoid message");
+                    KeyDown += frmGame_KeyDown;
+                    LoadBall();
+                    tmrSpeed.Start();
+                }
             }
-            else
+            catch (Exception e)
             {
-                MessageBox.Show("Has perdido una vida, re manco", "Arkanoid message");
-                KeyDown += frmGame_KeyDown;
-                LoadBall();
-                tmrSpeed.Start();
+                Console.WriteLine(e.Message);
             }
+            
         }
+    
 
         private void Bounceball()
         {

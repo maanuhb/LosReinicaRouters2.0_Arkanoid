@@ -15,6 +15,7 @@ namespace Arkanoid
         {
             InitializeComponent();
         }
+        
         private void btnOk_Click_1(object sender, EventArgs e)
         {
             try
@@ -26,7 +27,11 @@ namespace Arkanoid
                     case string aux when aux.Trim().Length == 0:
                         throw new EmptyNicknameException("Ingrese usuario porfavor");
                     default:
-                        get?.Invoke(txtNickname.Text);
+                        if(txtNickname.Text.Length != 0)
+                            
+                            currentPlayer = new Player(txtNickname.Text, 0);
+                        get?.Invoke(txtNickname.Text); 
+                        Dispose();
                         break;
                 }
             }
@@ -38,15 +43,8 @@ namespace Arkanoid
             {
                 MessageBox.Show(ex.Message);
             }
-
-            if(txtNickname.Text.Length != 0)
-                
-            currentPlayer = new Player(txtNickname.Text, 0);
-            get?.Invoke(txtNickname.Text);
-            Dispose();
         }
-        
-        
+
         private void btnOk_MouseHover_1(object sender, EventArgs e)
         {
             btnOk.BackColor = btnOk.BackColor == Color.MediumBlue ?

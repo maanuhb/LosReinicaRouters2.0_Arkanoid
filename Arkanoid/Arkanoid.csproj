@@ -101,7 +101,13 @@
 
         <Compile Include="Modelo\ExceedMaxCharException.cs" />
 
+        <Compile Include="Modelo\NoRemainingLifesException.cs" />
+
+        <Compile Include="Modelo\OutOfBordersException.cs" />
+
         <Compile Include="Modelo\Player.cs" />
+
+        <Compile Include="Modelo\WrongKeyPressedException.cs" />
 
         <Compile Include="Program.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
