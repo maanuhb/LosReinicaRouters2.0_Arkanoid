@@ -6,30 +6,25 @@ namespace Arkanoid
 {
     public partial class TOP10 : Form
     {
-        
         //Delegates para poder controlar el show y hide del top
         public delegate void OnCloseWindows();
         public OnCloseWindows CloseAction;
-
         private Label[,] players;
-        
         public TOP10()
         {
             InitializeComponent();
         }
-        
         //Cambiar ventanas actuales por medio del delegate
         private void TOP10_FormClosed(object sender, FormClosedEventArgs e)
         {
             CloseAction?.Invoke();
         }
-
-
         private void TOP10_Load(object sender, EventArgs e)
         {
             LoadPlayers();
         }
 
+        #region loadPlayersFunction
         private void LoadPlayers()
         {
             var PlayerList = PlayerController.ObtainTopPlayers();
@@ -66,6 +61,9 @@ namespace Arkanoid
                 }
             }
         }
+        #endregion
+        
+        #region menuButton
         //  Al presionar este botón, el usuario regresará al menú principal.
         private void btnMenu_Click(object sender, EventArgs e)
         {
@@ -82,5 +80,6 @@ namespace Arkanoid
         {
             btnMenu.BackColor = Color.MediumBlue;
         }
+        #endregion
     }
 }

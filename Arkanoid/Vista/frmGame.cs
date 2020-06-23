@@ -11,7 +11,6 @@ namespace Arkanoid
         private bool[,] _arrayExist;
         private int _live = 3;
         private GetNickname _gn;
-
         public FrmGame()
         {
             InitializeComponent();
@@ -25,6 +24,8 @@ namespace Arkanoid
             int y = (int) (Height * 0.20);
             picSpaceShip.Location = new Point(x, y);
         }
+
+        #region platformMovement
 
         //Movimiento de la plataforma con teclado
         private void frmGame_KeyDown(object sender, KeyEventArgs e)
@@ -49,7 +50,7 @@ namespace Arkanoid
             {
                 Console.WriteLine(ex.Message);
             }
-            
+
             if (!GameData.gamestarted)
             {
                 switch (e.KeyCode)
@@ -83,180 +84,204 @@ namespace Arkanoid
             }
         }
 
+        #endregion
+
+        #region idPlayer
+
         //obteniendo el ID del jugador
         private void GettingScore()
         {
             string query = $"SELECT idPlayer FROM PLAYER WHERE nickname = '{_gn.CurrentPlayer.Nickname}'";
 
-                var dt = ArkanoidDBcn.ExecuteQuery(query);
-                var dr = dt.Rows[0];
-                var idPlayer = Convert.ToInt32(dr[0].ToString());
+            var dt = ArkanoidDBcn.ExecuteQuery(query);
+            var dr = dt.Rows[0];
+            var idPlayer = Convert.ToInt32(dr[0].ToString());
 
-                ArkanoidDBcn.ExecuteNonquery("INSERT INTO SCORE(idPlayer,score) VALUES " +
-                                             $"({idPlayer},{GameData.score})");
+            ArkanoidDBcn.ExecuteNonquery("INSERT INTO SCORE(idPlayer,score) VALUES " +
+                                         $"({idPlayer},{GameData.score})");
 
-                if (MessageBox.Show($"Su puntuación de {GameData.score}, se ha registrado correctamente",
-                    "Arkanoid message", MessageBoxButtons.OK) == DialogResult.OK)
-                {
-                    FrmMainMenu menu = new FrmMainMenu();
-                    menu.Show();
-                    Dispose();
+            if (MessageBox.Show($"Su puntuación de {GameData.score}, se ha registrado correctamente",
+                "Arkanoid message", MessageBoxButtons.OK) == DialogResult.OK)
+            {
+                FrmMainMenu menu = new FrmMainMenu();
+                menu.Show();
+                Dispose();
 
             }
         }
+
+        #endregion
+
         // Cuando la ventana se carga, se ejecutará esta función.
         private void frmGame_Load(object sender, EventArgs e)
         {
             //Setting 0 to score and ticks for a new game
             GameData.score = 0;
             GameData.AmountTicks = 0;
-            
-            _gn = new GetNickname();
-                _gn.Left = Width / 2 - _gn.Width / 2;
-                _gn.Top = Height / 2 - _gn.Height / 2;
 
-                _gn.Get = (nick) =>
+            _gn = new GetNickname();
+            _gn.Left = Width / 2 - _gn.Width / 2;
+            _gn.Top = Height / 2 - _gn.Height / 2;
+
+            _gn.Get = (nick) =>
+            {
+                // Si el usuario que se ingreso es uno que ya se encuentra guardado en la base,
+                // se mostrara este mensaje.
+                if (PlayerController.CreatePlayer(nick))
                 {
-                    // Si el usuario que se ingreso es uno que ya se encuentra guardado en la base,
-                    // se mostrara este mensaje.
-                    if (PlayerController.CreatePlayer(nick))
+                    MessageBox.Show($"Bienvenido de nuevo {nick}");
+                }
+                // Si no, se mostrará un mensaje de registro.
+                else
+                {
+                    MessageBox.Show($"Gracias por registrarte {nick}");
+                }
+            };
+            Controls.Add(_gn);
+            _gn.BringToFront();
+            // Se le asigna la imagen a la nave, su tamaño y la posición de la misma.
+            picSpaceShip.BackgroundImage = Image.FromFile("../../Resources/barra2loop.gif");
+            picSpaceShip.BackgroundImageLayout = ImageLayout.Stretch;
+            picSpaceShip.Top = (Height - picSpaceShip.Height) - 130;
+            LoadBall();
+            LoadTiles();
+            lblScore.Text = GameData.score.ToString();
+        }
+
+        #region loadTiles
+
+        //Llenamos la matriz con los bloques 
+        private void LoadTiles()
+        {
+            int xAxis = 6;
+            int yAxis = 4;
+            // Aqui reducimos el tamaño de los bloques para que pueda encajar en el espacio asignado del juego
+            int pbHeight = (int) (Height * 0.3) / yAxis;
+            int pbWidth = (int) (Width / 2.15) / xAxis;
+            string number = "7";
+            int block;
+            _cpb = new CustomPictureBox[yAxis, xAxis];
+            for (int i = 0; i < yAxis; i++)
+            {
+                // Aqui se manda a llamar la función RandomNumber para poder realizar la distribución de bloques
+                // por cada fila.
+                block = RandomNumber(ref number);
+                number += block;
+                for (int j = 0; j < xAxis; j++)
+                {
+                    _cpb[i, j] = new CustomPictureBox();
+                    // Si el bloque es igual al bloque numero 0, tendra un total de 3 golpes para ser destruido,
+                    // y tendra el nombre clave: ThreeHit.
+                    if (block == 0)
                     {
-                        MessageBox.Show($"Bienvenido de nuevo {nick}");
+                        _cpb[i, j].hits = 3;
+                        _cpb[i, j].Tag = "ThreeHit";
                     }
-                    // Si no, se mostrará un mensaje de registro.
+                    // Si el bloque es igual al bloque numero 6, tendra un total de 2 golpes para ser destruido,
+                    // y tendra el nombre clave: TwoHit.
+                    else if (block == 6)
+                    {
+                        _cpb[i, j].hits = 2;
+                        _cpb[i, j].Tag = "TwoHit";
+                    }
+                    // Si el bloque es igual a un número dentro del rango 1-5,
+                    // solo tendra un golpe para ser destruido, y tendra el nombre clave: OneHit.
                     else
                     {
-                        MessageBox.Show($"Gracias por registrarte {nick}");
+                        _cpb[i, j].hits = 1;
+                        _cpb[i, j].Tag = "OneHit";
                     }
-                };
-                Controls.Add(_gn);
-                _gn.BringToFront();
-                // Se le asigna la imagen a la nave, su tamaño y la posición de la misma.
-                picSpaceShip.BackgroundImage = Image.FromFile("../../Resources/barra2loop.gif");
-                picSpaceShip.BackgroundImageLayout = ImageLayout.Stretch;
-                picSpaceShip.Top = (Height - picSpaceShip.Height) - 130;
-                LoadBall();
-                LoadTiles();
-                lblScore.Text = GameData.score.ToString();
-            }
 
-            //Llenamos la matriz con los bloques 
-            private void LoadTiles()
-            {
-                int xAxis = 6;
-                int yAxis = 4;
-                // Aqui reducimos el tamaño de los bloques para que pueda encajar en el espacio asignado del juego
-                int pbHeight = (int) (Height * 0.3) / yAxis;
-                int pbWidth = (int) (Width / 2.15) / xAxis;
-                string number = "7";
-                int block;
-                _cpb = new CustomPictureBox[yAxis, xAxis];
-                for (int i = 0; i < yAxis; i++)
-                {
-                    // Aqui se manda a llamar la función RandomNumber para poder realizar la distribución de bloques
-                    // por cada fila.
-                    block = RandomNumber(ref number);
-                    number += block;
-                    for (int j = 0; j < xAxis; j++)
-                    {
-                        _cpb[i, j] = new CustomPictureBox();
-                        // Si el bloque es igual al bloque numero 0, tendra un total de 3 golpes para ser destruido,
-                        // y tendra el nombre clave: ThreeHit.
-                        if (block == 0)
-                        {
-                            _cpb[i, j].hits = 3;
-                            _cpb[i, j].Tag = "ThreeHit";
-                        }
-                        // Si el bloque es igual al bloque numero 6, tendra un total de 2 golpes para ser destruido,
-                        // y tendra el nombre clave: TwoHit.
-                        else if (block == 6)
-                        {
-                            _cpb[i, j].hits = 2;
-                            _cpb[i, j].Tag = "TwoHit";
-                        }
-                        // Si el bloque es igual a un número dentro del rango 1-5,
-                        // solo tendra un golpe para ser destruido, y tendra el nombre clave: OneHit.
-                        else
-                        {
-                            _cpb[i, j].hits = 1;
-                            _cpb[i, j].Tag = "OneHit";
-                        }
+                    _cpb[i, j].Height = pbHeight;
+                    _cpb[i, j].Width = pbWidth;
 
-                        _cpb[i, j].Height = pbHeight;
-                        _cpb[i, j].Width = pbWidth;
-
-                        //Aqui lo que hicimos fue que le cambiamos las coordenadas de aparicion de los bloques, para que 
-                        //encajara con el espacio asignado del juego
-                        _cpb[i, j].Left = (int) (Width * 0.30) + j * pbWidth;
-                        _cpb[i, j].Top = (int) (Height * 0.22) + i * pbHeight;
-                        _cpb[i, j].BackgroundImage = Image.FromFile("../../Resources/_" + (block) + ".png");
-                        _cpb[i, j].BackgroundImageLayout = ImageLayout.Stretch;
-                        _cpb[i, j].BackColor = Color.Transparent;
-                        Controls.Add(_cpb[i, j]);
-                    }
+                    //Aqui lo que hicimos fue que le cambiamos las coordenadas de aparicion de los bloques, para que 
+                    //encajara con el espacio asignado del juego
+                    _cpb[i, j].Left = (int) (Width * 0.30) + j * pbWidth;
+                    _cpb[i, j].Top = (int) (Height * 0.22) + i * pbHeight;
+                    _cpb[i, j].BackgroundImage = Image.FromFile("../../Resources/_" + (block) + ".png");
+                    _cpb[i, j].BackgroundImageLayout = ImageLayout.Stretch;
+                    _cpb[i, j].BackColor = Color.Transparent;
+                    Controls.Add(_cpb[i, j]);
                 }
             }
+        }
 
-            //Funcion para devolver un numero al azar y poder llenar las filas de bloques de acuerdo al numero
-            //que nos salga
-            private int RandomNumber(ref string number)
+        #endregion
+
+        #region randomNumber
+
+        //Funcion para devolver un numero al azar y poder llenar las filas de bloques de acuerdo al numero
+        //que nos salga
+        private int RandomNumber(ref string number)
+        {
+            Random rnd = new Random();
+            int newNumber;
+            bool diff = true;
+            string ct;
+            do
             {
-                Random rnd = new Random();
-                int newNumber;
-                bool diff = true;
-                string ct;
-                do
+                if (number.Length == 1)
                 {
-                    if (number.Length == 1)
+                    newNumber = rnd.Next(7);
+                    diff = false;
+                }
+                else
+                {
+                    newNumber = rnd.Next(7);
+                    ct = $"{newNumber}";
+                    if (!number.Contains(ct))
                     {
-                        newNumber = rnd.Next(7);
                         diff = false;
                     }
-                    else
-                    {
-                        newNumber = rnd.Next(7);
-                        ct = $"{newNumber}";
-                        if (!number.Contains(ct))
-                        {
-                            diff = false;
-                        }
-                    }
-                } while (diff);
-
-                return newNumber;
-            }
-            // En esta función se carga el modelo de la pelota, su altura, posición y su respectivo sprite.
-            private void LoadBall()
-            {
-                _ball = new PictureBox();
-                _ball.Width = _ball.Height = 20;
-                _ball.BackgroundImage = Image.FromFile("../../Resources/pelota.png");
-                _ball.BackgroundImageLayout = ImageLayout.Stretch;
-                _ball.BackColor = Color.Transparent;
-                _ball.Top = picSpaceShip.Top - _ball.Height;
-                _ball.Left = picSpaceShip.Left + (picSpaceShip.Width / 2) - (_ball.Width / 2);
-                Controls.Add(_ball);
-            }
-
-            private void tmrSpeed_Tick(object sender, EventArgs e)
-            {
-                //ticks realizados para calcular el score
-                GameData.AmountTicks += 0.09;
-
-                if (!GameData.gamestarted)
-                    return;
-                try
-                {
-                    _ball.Left += GameData.dirX;
-                    _ball.Top += GameData.dirY;
-                    Bounceball();
                 }
-                catch (OutOfBordersException exception)
-                {
-                    Console.WriteLine(exception);
-                    throw;
-                }
+            } while (diff);
+
+            return newNumber;
+        }
+
+        #endregion
+
+        #region loadBall
+
+        // En esta función se carga el modelo de la pelota, su altura, posición y su respectivo sprite.
+        private void LoadBall()
+        {
+            _ball = new PictureBox();
+            _ball.Width = _ball.Height = 20;
+            _ball.BackgroundImage = Image.FromFile("../../Resources/pelota.png");
+            _ball.BackgroundImageLayout = ImageLayout.Stretch;
+            _ball.BackColor = Color.Transparent;
+            _ball.Top = picSpaceShip.Top - _ball.Height;
+            _ball.Left = picSpaceShip.Left + (picSpaceShip.Width / 2) - (_ball.Width / 2);
+            Controls.Add(_ball);
+        }
+
+        #endregion
+
+        #region timerSpeed
+        private void tmrSpeed_Tick(object sender, EventArgs e)
+        {
+            //ticks realizados para calcular el score
+            GameData.AmountTicks += 0.09;
+
+            if (!GameData.gamestarted)
+                return;
+            try
+            {
+                _ball.Left += GameData.dirX;
+                _ball.Top += GameData.dirY;
+                Bounceball();
             }
+            catch (OutOfBordersException exception)
+            {
+                Console.WriteLine(exception);
+                throw;
+            }
+        }
+        #endregion
+
+        #region flickeringIssue
         // Esta funcion sirve para redibujar el fondo, para que no se tenga ningun error visual
         protected override CreateParams CreateParams
         {
@@ -267,6 +292,9 @@ namespace Arkanoid
                 return handleParam;
             }
         }
+        #endregion
+
+        #region lives
         // Esta función es utilizada para la dinámica de las vidas.
         private void Liveaction()
         {
@@ -306,6 +334,9 @@ namespace Arkanoid
                 Console.WriteLine(e.Message);
             }
         }
+        #endregion
+
+        #region ballPhysics
         // Esta función sirve para realizar las fisicas de la pelota.
         private void Bounceball()
         {
@@ -378,14 +409,15 @@ namespace Arkanoid
                     }
                 }
             }
-
             if (GameOver())
             {
                 tmrSpeed.Stop();
                 GettingScore();
             }
         }
+        #endregion
 
+        #region gameOver
         private bool GameOver()
         {
             //Comprobamos si la matriz de bloques esta vacia para saber si el jugador gano
@@ -398,12 +430,13 @@ namespace Arkanoid
 
             return true;
         }
+        #endregion
+        
         // Al presionar la X en la ventana, mostrará el mensaje en cuestión, y devolvera al usuario al menú principal.
         private void FrmGame_FormClosing(object sender, FormClosingEventArgs e)
         {
-
             if (MessageBox.Show("Estas seguro que deseas salir al menú ?", "Arkanoid Message", MessageBoxButtons.YesNo,
-                MessageBoxIcon.Question) == DialogResult.Yes)
+                    MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 FrmMainMenu menu = new FrmMainMenu();
                 menu.Show();

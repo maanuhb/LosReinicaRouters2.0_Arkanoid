@@ -6,6 +6,7 @@ namespace Arkanoid
 {
     public static class PlayerController
     {
+        #region createPlayer
         public static bool CreatePlayer(string nickname)
         {
             var dt = ArkanoidDBcn.ExecuteQuery($"SELECT * FROM PLAYER WHERE nickname = '{nickname}' ");
@@ -19,13 +20,9 @@ namespace Arkanoid
                 return false;
             }
         }
-        
-      /*  public static void CreateScore(int idPlayer, int score)
-        {
-            ArkanoidDBcn.ExecuteNonquery("INSERT INTO SCORE(idPlayer,score) VALUES " +
-                                         $"('{idPlayer}','{score}')");
-        }*/
-        
+        #endregion
+
+        #region playerList
         public static List<Player> ObtainTopPlayers() 
         {
             var TopPlayers = new List<Player>();
@@ -42,5 +39,6 @@ namespace Arkanoid
             
             return TopPlayers;
         }
+        #endregion
     }
 }

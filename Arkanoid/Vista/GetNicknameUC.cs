@@ -15,7 +15,8 @@ namespace Arkanoid
         {
             InitializeComponent();
         }
-        
+
+        #region okButton
         private void btnOk_Click_1(object sender, EventArgs e)
         {
             try
@@ -54,5 +55,6 @@ namespace Arkanoid
         {
             btnOk.BackColor = Color.MediumBlue;
         }
+        #endregion
     }
 }

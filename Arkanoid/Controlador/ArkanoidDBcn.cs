@@ -12,7 +12,8 @@ namespace Arkanoid
 
         private static string sConnection =
             $"Server={host};Port=5432;User Id={UserId};Password={password};Database={database}";
-            
+
+        #region executeQuery
         public static DataTable ExecuteQuery(string query)
         {
             NpgsqlConnection connection = new NpgsqlConnection(sConnection);
@@ -27,7 +28,9 @@ namespace Arkanoid
 
             return ds.Tables[0];
         }
+        #endregion
 
+        #region executeNonQuery
         public static void ExecuteNonquery(string act)
         {
             NpgsqlConnection connection = new NpgsqlConnection(sConnection);
@@ -39,5 +42,6 @@ namespace Arkanoid
 
             connection.Close();
         }
+        #endregion
     }
 }

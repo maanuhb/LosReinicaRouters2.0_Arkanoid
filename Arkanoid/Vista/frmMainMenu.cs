@@ -11,13 +11,8 @@ namespace Arkanoid
             InitializeComponent();
             instructionsUC1.Visible = false;
         }
-        // Al presionar este botón, se mostrará el juego.
-        private void btnPlay_Click(object sender, EventArgs e)
-        {
-            FrmGame playGame = new FrmGame();
-            playGame.Show();
-            Hide();
-        }
+
+        #region flickeringIssue
         //Esta funcion sirve para redibujar el fondo, para que no se tenga ningun error visual.
         protected override CreateParams CreateParams
         {
@@ -27,7 +22,17 @@ namespace Arkanoid
                 handleParam.ExStyle |= 0x02000000; // WS_EX_COMPOSITED       
                 return handleParam;
             }
-        } 
+        }
+        #endregion
+
+        #region playButton
+        // Al presionar este botón, se mostrará el juego.
+        private void btnPlay_Click(object sender, EventArgs e)
+        {
+            FrmGame playGame = new FrmGame();
+            playGame.Show();
+            Hide();
+        }
         //las funciones hover de los botones, son cuando el mouse pase sobre encima del botón, este cambie el color.
         private void btnPlay_MouseHover(object sender, EventArgs e)
         {
@@ -39,6 +44,9 @@ namespace Arkanoid
         {
             btnPlay.BackColor = Color.MediumBlue;
         }
+        #endregion
+
+        #region topScoreButton
         // Al presionar este botón, llevara al apartado del top 10.
         private void btnTopScore_Click(object sender, EventArgs e)
         {
@@ -63,6 +71,9 @@ namespace Arkanoid
         {
             btnTopScore.BackColor = Color.MediumBlue;
         }
+        #endregion
+
+        #region exitButton
         // Al presionar este botón, saltará un mensaje de advertencia por si se desea cerrar la aplicación.
         private void btnExit_Click(object sender, EventArgs e)
         {
@@ -81,6 +92,10 @@ namespace Arkanoid
         {
             btnExit.BackColor = Color.MediumBlue;
         }
+         
+        #endregion
+
+        #region instructionButton
         //la funcion hover del botón de instrucciones, sirve para mostrar las instrucciones del juego.
         private void btnInstructions_MouseHover(object sender, EventArgs e)
         {
@@ -91,7 +106,7 @@ namespace Arkanoid
         {
             instructionsUC1.Visible = false;
         }
-
+        #endregion
         private void FrmMainMenu_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
