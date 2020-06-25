@@ -5,13 +5,14 @@ namespace Arkanoid
 {
     public static class ArkanoidDBcn
     {
-        private static string host = "127.0.0.1",
-            database = "Arkanoid",
-            UserId = "postgres",
-            password = "uca";
+        private static string host = "ec2-52-207-25-133.compute-1.amazonaws.com",
+            database = "d3v2esh56jr4ke",
+            UserId = "yxpdnpyfajkiup",
+            password = "d3efa8677f595ed0e850497305c89c5c31e34d8f058dd30c3a2f1a57f58e97f1";
 
         private static string sConnection =
-            $"Server={host};Port=5432;User Id={UserId};Password={password};Database={database}";
+            $"Server={host};Port=5432;User Id={UserId};Password={password};Database={database};"+
+            $"sslmode=Require;Trust Server Certificate=true";
 
         #region executeQuery
         public static DataTable ExecuteQuery(string query)
